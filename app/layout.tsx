@@ -1,10 +1,9 @@
-'use client'
+"use client";
 
-import { robotoSlab, montserrat  } from "@/app/fonts/fonts";
+import { robotoSlab, montserrat } from "@/app/fonts/fonts";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import { MantineProvider } from "@mantine/core";
-import { usePathname } from "next/navigation";
 import Footer from "./components/footer/Footer";
 
 export default function RootLayout({
@@ -12,25 +11,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-  const isHomePage = pathname === "/";
-
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico"/>
+        <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="index, follow" />
       </head>
       <body
-        className={`${
-          isHomePage ? "" : "mt-[130px] px-6 md:px-16 py-10"
-        }  ${robotoSlab.variable} ${montserrat.variable} antialiased`}
+        className={`${robotoSlab.variable} ${montserrat.variable} antialiased`}
       >
         <MantineProvider>
           <Navbar />
           {children}
-          <Footer/>
+          <Footer />
         </MantineProvider>
       </body>
     </html>
