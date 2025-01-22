@@ -6,7 +6,7 @@ interface SectionTitleProps {
 
 const SectionTitle = ({ text }: SectionTitleProps) => {
   return (
-    <h4 className="font-[400] text-[18px] md:text-[20px] md:leading-[26.38px] md:tracking-[18%] text-havilah-whiskey">
+    <h4 className="font-[400] font-robotoSlab text-[18px] md:text-[20px] md:leading-[26.38px] md:tracking-[3px] text-havilah-whiskey">
       {text}
     </h4>
   );

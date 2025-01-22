@@ -1,0 +1,48 @@
+'use client'
+
+import React from "react";
+import Heading from "../Heading";
+import Line from "../Line";
+import Image from "next/image";
+import kitchenImage from "@/public/images/kitchen-image.png";
+import SectionTitle from "./SectionTitle";
+import SectionSubTitle from "./SectionSubTitle";
+import SectionContent from "./SectionContent";
+import SectionButton from "./SectionButton";
+import useInView from "@/app/hooks/useInView";
+
+const KitchenSection = () => {
+  const { ref, isInView } = useInView(0.2);
+  return (
+    <div
+      ref={ref}
+      className={`p-4 md:p-12 lg:px-24 lg:pt-24 transform transition duration-700 ease-out ${
+        isInView ? "opacity-100 scale-100" : "opacity-0 scale-95"
+      }`}
+    >
+      <Heading text="Havilah " text2="Kitchen" className="flex" />
+      <Line />
+      <section className="flex flex-col md:flex-row items-center mt-16">
+        <div className="md:w-1/2 px-8 py-10 bg-white shadow-lg rounded-tl-lg rounded-bl-lg z-40">
+          <SectionTitle text="Why Havilah Kitchen" />
+          <SectionSubTitle text="Your Event, Our Culinary Excellence" />
+          <SectionContent
+            highlightedtext="Havilah Kitchen "
+            text="is a premier on-site catering service dedicated to delivering exceptional culinary experiences for every occasion. Founded by our CEO , our business prides itself on crafting delicious, customized menus that cater to the unique tastes and needs of our clients. Whether it's a corporate event, wedding, or private party, we combine fresh, high-quality ingredients with professional service to ensure every event is a memorable success."
+          />
+          <SectionButton text="BOOK US" />
+        </div>
+        <div className="md:w-1/2 md:ml-[-20px]">
+          <Image
+            src={kitchenImage}
+            alt="Havilah Kitchen"
+            className="rounded-lg shadow-lg"
+            priority
+          />
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default KitchenSection;

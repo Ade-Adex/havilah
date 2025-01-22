@@ -1,6 +1,6 @@
 'use client'
 
-import { nunito, inter, roboto, poppins } from "@/app/fonts/fonts";
+import { robotoSlab, montserrat  } from "@/app/fonts/fonts";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import { MantineProvider } from "@mantine/core";
@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={`${
           isHomePage ? "" : "mt-[130px] px-6 md:px-16 py-10"
-        }  ${inter.variable} ${nunito.variable} ${roboto.variable} ${poppins.variable} antialiased`}
+        }  ${robotoSlab.variable} ${montserrat.variable} antialiased`}
       >
         <MantineProvider>
           <Navbar />

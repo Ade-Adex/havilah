@@ -36,10 +36,8 @@ export default {
 
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-        roboto: ["Roboto", "sans-serif"],
-        inter: ["Inter", "sans-serif"],
-        ubuntu: ['Ubuntu', 'sans-serif'],
+        robotoSlab: ["Roboto Slab", "serif"], // Add Roboto Slab
+        montserrat: ["Montserrat", "sans-serif"], // Add Montserrat
       },
     },
   },

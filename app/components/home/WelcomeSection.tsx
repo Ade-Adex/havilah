@@ -1,3 +1,6 @@
+'use client'
+
+
 import React from "react";
 import Image from "next/image";
 import welcomeImage from "@/public/images/welcome-image.png";
@@ -7,11 +10,22 @@ import SectionTitle from "../home/SectionTitle";
 import SectionSubTitle from "../home/SectionSubTitle";
 import SectionContent from "../home/SectionContent";
 import SectionButton from "../home/SectionButton";
+import useInView from "@/app/hooks/useInView";
 
 const WelcomeSection = () => {
+  const { ref, isInView } = useInView(0.2);
   return (
-    <div className="p-4 md:p-12 lg:p-24">
-      <Heading text="Welcome to" text2="Havilah Events Place" />
+    <div
+      ref={ref}
+      className={`p-4 md:p-12 lg:px-24 lg:pt-24 transform transition duration-700 ease-out ${
+        isInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+      }`}
+    >
+      <Heading
+        text="Welcome to"
+        text2="Havilah Events Place"
+        className="flex flex-col md:flex-row"
+      />
       <Line />
       <section className="flex flex-col md:flex-row items-center mt-16">
         <div className="md:w-1/2">
@@ -23,7 +37,7 @@ const WelcomeSection = () => {
           />
         </div>
 
-        <div className="md:w-1/2 p-8 bg-gray-100 shadow-lg rounded-lg ml-[-20px] z-40">
+        <div className="md:w-1/2 px-8 py-10 bg-white shadow-lg rounded-tr-lg rounded-br-lg md:ml-[-20px] z-40">
           <SectionTitle text="About Us" />
           <SectionSubTitle text="The Most Preferred Location" />
           <SectionContent
