@@ -71,7 +71,7 @@ const Footer = () => {
             {/* Newsletter Section */}
             <div className="mb-10 lg:mb-0 lg:w-1/3 flex flex-col items-center">
               <Image src={logo} alt="Logo" className="h-20 w-20 mb-6" />
-              <div className="rounded-lg bg-havilah-footer pt-5 pb-16 px-4 relative">
+              <div className="rounded-lg bg-havilah-footer pt-5 pb-16 px-4 relative hidden md:flex">
                 <div className="hidden md:block absolute top-0 left-0 md:w-[56%] h-full">
                   <Image
                     src={newsletterBgImage}
@@ -83,7 +83,7 @@ const Footer = () => {
                 <h2 className="text-lg font-semibold mb-5 text-center font-robotoSlab leading-[26px] tracking-[5px]">
                   Newsletter
                 </h2>
-                <form className="w-full max-w-sm mt-12">
+                <form className="w-full max-w-sm mt-12 ">
                   <div className="flex">
                     <input
                       type="email"
