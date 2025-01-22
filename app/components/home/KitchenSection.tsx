@@ -10,20 +10,29 @@ import SectionSubTitle from "./SectionSubTitle";
 import SectionContent from "./SectionContent";
 import SectionButton from "./SectionButton";
 import useInView from "@/app/hooks/useInView";
+import triangle from "@/public/images/triangle.png"
 
 const KitchenSection = () => {
   const { ref, isInView } = useInView(0.2);
   return (
     <div
       ref={ref}
-      className={`p-4 md:p-12 lg:px-24 lg:pt-24 transform transition duration-700 ease-out ${
+      className={`px-4 py-8 md:p-12 lg:px-24 lg:pt-24 transform transition duration-700 ease-out ${
         isInView ? "opacity-100 scale-100" : "opacity-0 scale-95"
       }`}
     >
+      <div className="absolute top-0 right-0 w-[100%] lg:w-[100%] h-full">
+        <Image
+          src={triangle}
+          alt="Footer background"
+          fill
+          className="object-cover opacity-80"
+        />
+      </div>
       <Heading text="Havilah " text2="Kitchen" className="flex" />
       <Line />
-      <section className="flex flex-col md:flex-row items-center mt-16">
-        <div className="md:w-1/2 px-8 py-10 bg-white shadow-lg rounded-tl-lg rounded-bl-lg z-40">
+      <section className="flex flex-col lg:flex-row  gap-y-4 lg:gap-y-0 items-center mt-16">
+        <div className="lg:w-1/2 px-8 py-10 bg-white shadow-lg rounded-tl-lg rounded-bl-lg z-40">
           <SectionTitle text="Why Havilah Kitchen" />
           <SectionSubTitle text="Your Event, Our Culinary Excellence" />
           <SectionContent
@@ -32,7 +41,7 @@ const KitchenSection = () => {
           />
           <SectionButton text="BOOK US" />
         </div>
-        <div className="md:w-1/2 md:ml-[-20px]">
+        <div className="lg:w-1/2 lg:ml-[-20px]">
           <Image
             src={kitchenImage}
             alt="Havilah Kitchen"

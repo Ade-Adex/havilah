@@ -12,7 +12,7 @@ const DesktopNavLinks: React.FC<DesktopNavLinksProps> = ({ navLinks }) => {
   const pathname = usePathname(); // Get the current path
 
   return (
-    <div className="hidden md:flex gap-12 items-center relative">
+    <div className="hidden lg:flex gap-12 items-center relative">
       {navLinks.map((link) => {
         const isActive = pathname === link.path; // Check if the link is active
         return (

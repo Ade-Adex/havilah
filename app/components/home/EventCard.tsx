@@ -7,6 +7,8 @@ import completed from "@/public/images/complete.png";
 import loading from "@/public/images/Loading.png";
 import useInView from "@/app/hooks/useInView";
 import { Event } from "@/app/types/event/event";
+import OngoingIcon from "./OngoingIcon";
+import UpcomingIcon from "./UpcomingIcon";
 
 const EventCard: React.FC<{ event: Event }> = ({ event }) => {
   const { title, type, date, description, status, imageUrl } = event;
@@ -85,8 +87,12 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
             {status === "Completed" && (
               <Image src={completed} alt="Completed" className="h-5 w-5 mr-2" />
             )}
-            {status === "Ongoing" && <span>🔄</span>}
-            {status === "Upcoming" && <span>🔔</span>}
+            {status === "Ongoing" && (
+              <OngoingIcon className="h-5 w-5 mr-2 text-havilah-deep-cove" />
+            )}
+            {status === "Upcoming" && (
+              <UpcomingIcon className="h-5 w-5 mr-2 text-havilah-deep-cove" />
+            )}
             <span className="ml-2">{status}</span>
           </span>
         </div>

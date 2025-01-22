@@ -33,6 +33,7 @@ export default {
         "havilah-light-deep-cove": "#333362",
         "havilah-whiskey": "#CDA274",
         "havilah-light-whiskey": "#D5B089",
+        "havilah-footer": "#161A27",
 
       },
       fontFamily: {

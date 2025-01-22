@@ -11,6 +11,7 @@ import hero1 from "@/public/images/hero1.png";
 import hero2 from "@/public/images/hero2.png";
 import hero3 from "@/public/images/hero3.png";
 import hero4 from "@/public/images/hero4.png";
+import { FiChevronsRight, FiChevronsLeft } from "react-icons/fi";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>;
@@ -24,33 +25,19 @@ const HeroHeader = () => {
 
   const NextArrow = ({ onClick }: ArrowProps) => (
     <div
-      className="absolute top-1/2 right-0 z-10 transform -translate-y-1/2 cursor-pointer"
+      className="absolute hidden md:block top-1/2 right-5 z-10 transform -translate-y-1/2 cursor-pointer rounded-full p-2 hover:bg-havilah-footer text-white"
       onClick={onClick}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 50 70"
-        width="50"
-        height="70"
-      >
-        <polygon points="10,5 25,35 10,65" fill="#cbd5e0" />
-      </svg>
+      <FiChevronsRight size={52}/>
     </div>
   );
 
   const PrevArrow = ({ onClick }: ArrowProps) => (
     <div
-      className="absolute top-1/2 left-0 z-10 transform -translate-y-1/2 cursor-pointer"
+      className="absolute hidden md:block top-1/2 left-5 z-10 transform -translate-y-1/2 cursor-pointer rounded-full p-2 hover:bg-havilah-footer text-white"
       onClick={onClick}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 50 70"
-        width="50"
-        height="70"
-      >
-        <polygon points="40,5 25,35 40,65" fill="#cbd5e0" />
-      </svg>
+      <FiChevronsLeft size={52}/>
     </div>
   );
 

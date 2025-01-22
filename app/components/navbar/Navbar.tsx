@@ -35,7 +35,7 @@ const Navbar = () => {
           <DesktopNavLinks navLinks={navLinks} />
 
           {/* Mobile Menu */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center gap-3 lg:hidden">
             <Burger
               opened={opened}
               onClick={toggle}

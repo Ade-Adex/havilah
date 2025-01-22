@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import { MantineProvider } from "@mantine/core";
 import { usePathname } from "next/navigation";
+import Footer from "./components/footer/Footer";
 
 export default function RootLayout({
   children,
@@ -29,6 +30,7 @@ export default function RootLayout({
         <MantineProvider>
           <Navbar />
           {children}
+          <Footer/>
         </MantineProvider>
       </body>
     </html>
