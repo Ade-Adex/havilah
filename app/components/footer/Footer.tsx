@@ -72,7 +72,7 @@ const Footer = () => {
             <div className="mb-10 lg:mb-0 lg:w-1/3 flex flex-col items-center">
               <Image src={logo} alt="Logo" className="h-20 w-20 mb-6" />
               <div className="rounded-lg bg-havilah-footer pt-5 pb-16 px-4 relative">
-                <div className="hidden md:block absolute top-0 left-0 w-[56%] h-full">
+                <div className="hidden md:block absolute top-0 left-0 md:w-[56%] h-full">
                   <Image
                     src={newsletterBgImage}
                     alt="Footer background"
