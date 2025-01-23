@@ -4,14 +4,14 @@ import type { Metadata } from "next";
 
 const baseMetadata: Metadata = {
   metadataBase: new URL("https://example.com"),
-  authors: [{ name: "Your Name", url: "https://example.com" }],
+  authors: [{ name: "Adex", url: "https://example.com" }],
   openGraph: {
     siteName: "Havila Event Place",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/public/images/Havila_Logo.png",
         width: 1200,
         height: 630,
         alt: "Example Banner",
