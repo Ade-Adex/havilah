@@ -16,8 +16,8 @@ const EventSection = () => {
 
   return (
     <div className="px-4 lg:px-24 lg:pt-24 relative">
-      <Heading text="Upcoming " text2="Events" className="flex" />
-      <Line />
+      <Heading text="Upcoming " text2="Events" className="flex justify-center" />
+      <Line ClassName="justify-center"/>
       <Image
         src={Rectangle}
         alt="Overlay"

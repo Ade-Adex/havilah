@@ -34,6 +34,7 @@ export default {
         "havilah-whiskey": "#CDA274",
         "havilah-light-whiskey": "#D5B089",
         "havilah-footer": "#161A27",
+        "havilah-card": "#C3C3D1",
 
       },
       fontFamily: {

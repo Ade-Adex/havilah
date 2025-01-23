@@ -2,9 +2,13 @@ import Image from "next/image";
 import React from "react";
 import lineImage from "@/public/images/heading_line.png";
 
-const Line = () => {
+interface LineProps {
+  ClassName?: string;
+}
+
+const Line: React.FC<LineProps> = ({ ClassName }) => {
   return (
-    <div className="flex justify-center items-center mt-4">
+    <div className={`flex ${ClassName} items-center mt-4`}>
       <Image
         src={lineImage}
         alt="decorative line"

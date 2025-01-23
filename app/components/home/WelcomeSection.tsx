@@ -24,9 +24,9 @@ const WelcomeSection = () => {
       <Heading
         text="Welcome to"
         text2="Havilah Events Place"
-        className="flex flex-col md:flex-row"
+        className="flex flex-col md:flex-row justify-center"
       />
-      <Line />
+      <Line ClassName="justify-center"/>
       <section className="flex flex-col lg:flex-row gap-y-4 lg:gap-y-0 items-center mt-16">
         <div className="lg:w-1/2">
           <Image
