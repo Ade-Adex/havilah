@@ -73,18 +73,27 @@ const EventSpaceAndLocationSection = () => (
       </div>
     </div>
 
-    <div className="mt-[120px] ml-[55%] relative">
+    <div className="lg:mt-[2%] lg:ml-[53%] xl:mt-[6.5%] xl:ml-[53%] relative">
       <AboutCard
         imageSrc={waiter}
         title="On-Site Catering"
         content="Premier on-site catering service dedicated to delivering exceptional culinary experiences for every occasion. Founded by our CEO, our business prides itself on crafting delicious, customized menus,"
       />
 
-      {/* Line with dots */}
-      <div className="absolute top-[50%] left-[-50%] flex items-center w-[300px]">
-        {/* Left vertical line */}
-        <div className="h-[50px] w-[2px] bg-[#1C1A47]"></div>
-      </div>
+      {/* lines below space card */}
+
+      <div className="absolute lg:top-[-3%] xl:top-[-7%] left-[-15%] flex items-center lg:w-[70px] xl:w-[100px]">
+          {/* left vertical line */}
+          <div className="lg:h-[140px] xl:h-[140px] w-[2px] bg-[#1C1A47]"></div>
+          {/* left top circle */}
+          <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[-2%] xl:top-[0%] left-[-5px]"></div>
+          {/* left bottom circle */}
+          <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[95%] xl:top-[95%] left-[-5px]"></div>
+          {/* horizontal line */}
+          <div className="flex-1 h-[2px] bg-[#1C1A47] lg:mt-[200%] xl:mt-[138%]"></div>
+          {/* horizontal line right circle */}
+          <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[95%] xl:top-[95%] left-[90%]"></div>
+        </div>
     </div>
   </main>
 );

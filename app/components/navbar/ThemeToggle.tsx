@@ -30,7 +30,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <button className="cursor-pointer my-auto" onClick={toggleTheme}>
+    <button className="cursor-pointer my-auto lg:hidden xl:block" onClick={toggleTheme}>
       <div className="toggle my-auto">
         <input type="checkbox" />
         <span className={`button bg-slate-300 dark:bg-white`}></span>

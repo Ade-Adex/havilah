@@ -1,9 +1,18 @@
-import React from 'react'
+"use client";
+
+import React from "react";
+import ContactBg from "@/public/images/contact-bg.png";
+import { usePathname } from "next/navigation";
+import PagesHero from "@/app/components/PagesHero";
 
 const ContactUaPage = () => {
+  const pathname = usePathname();
+  const formattedPathname = pathname.replace("/", "");
   return (
-    <div>ContactUaPage</div>
-  )
-}
+    <main>
+      <PagesHero bgImage={ContactBg} pageTitle={formattedPathname} />
+    </main>
+  );
+};
 
-export default ContactUaPage
+export default ContactUaPage;

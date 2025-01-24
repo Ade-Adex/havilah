@@ -17,7 +17,7 @@ const WelcomeSection = () => {
   return (
     <div
       ref={ref}
-      className={`px-4 py-8 md:p-12 lg:px-24 lg:pt-24 transform transition duration-700 ease-out ${
+      className={`py-8 px-4 md:px-12 lg:px-16 xl:px-24 transform transition duration-700 ease-out ${
         isInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
       }`}
     >

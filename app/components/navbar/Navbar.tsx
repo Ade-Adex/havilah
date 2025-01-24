@@ -26,7 +26,7 @@ const Navbar = () => {
         scrolled ? "fixed bg-[#161A27]" : "absolute "
       }`}
     >
-      <div className="mx-auto px-4 lg:px-24 h-full">
+      <div className="mx-auto px-4 md:px-12 lg:px-16 xl:px-24 h-full">
         <div className="flex justify-between items-center h-full">
           {/* Logo Section */}
           <LogoSection />
