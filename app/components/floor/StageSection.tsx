@@ -13,7 +13,7 @@ const StageSection = () => {
         <Image
           src={stageImage}
           alt="stage"
-          className="object-cover"
+          className="object-cover object-center w-full"
           priority
         />
       </div>
