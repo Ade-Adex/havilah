@@ -86,7 +86,7 @@ const AnimatedImage = ({ image, alt }: AnimatedImageProps) => {
         src={image}
         alt={alt}
         priority
-        className="object-cover w-full h-full rounded-lg shadow-lg"
+        className="object-cover w-full h-full"
       />
     </div>
   );
