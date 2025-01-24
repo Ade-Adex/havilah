@@ -1,6 +1,5 @@
 "use client";
 
-import AboutHero from "@/app/components/about-us/AboutHero";
 import CeoMessageSection from "@/app/components/about-us/CeoMessageSection";
 import EventSpaceAndLocationSection from "@/app/components/about-us/EventSpaceAndLocationSection";
 import FooterSection from "@/app/components/about-us/FooterSection";
