@@ -7,7 +7,8 @@ import PagesHero from "@/app/components/PagesHero";
 import Heading from "@/app/components/Heading";
 import Line from "@/app/components/Line";
 import { galleryImages } from "@/app/data/galleryImages";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import useInView from "@/app/hooks/useInView";
 
 const GalleryPage = () => {
   const pathname = usePathname();
@@ -33,7 +34,7 @@ const GalleryPage = () => {
               onClick={() => setSelectedCategory(category.category)}
               className={`px-4 py-2 text-[16px] font-[500] capitalize font-robotoSlab leading-[21.1px] ${
                 selectedCategory === category.category
-                  ? " text-havilah-whiskey underline"
+                  ? "text-havilah-whiskey underline"
                   : "text-havilah-deep-cove"
               }`}
             >
@@ -47,19 +48,13 @@ const GalleryPage = () => {
           .filter((category) => category.category === selectedCategory)
           .map((filteredCategory) => (
             <div key={filteredCategory.category}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                 {filteredCategory.images.map((image, imgIndex) => (
-                  <div
+                  <AnimatedImage
                     key={imgIndex}
-                    className="relative w-full h-0 pb-[75%] overflow-hidden"
-                  >
-                    <Image
-                      src={image}
-                      alt={`${filteredCategory.category} Image ${imgIndex + 1}`}
-                      fill
-                      className="object-cover w-full"
-                    />
-                  </div>
+                    image={image}
+                    alt={`${filteredCategory.category} Image ${imgIndex + 1}`}
+                  />
                 ))}
               </div>
             </div>
@@ -68,5 +63,34 @@ const GalleryPage = () => {
     </main>
   );
 };
+
+// Animated Image Component
+type AnimatedImageProps = {
+  image: string | StaticImageData; // Allow both string and StaticImageData
+  alt: string;
+};
+
+const AnimatedImage = ({ image, alt }: AnimatedImageProps) => {
+  const { ref, isInView } = useInView(0.2);
+
+  return (
+    <div
+      ref={ref}
+      className={`relative w-full h-full overflow-hidden transition-all duration-700 ease-out transform ${
+        isInView
+          ? "opacity-100 scale-100 rotate-0"
+          : "opacity-0 scale-90 rotate-3"
+      }`}
+    >
+      <Image
+        src={image}
+        alt={alt}
+        priority
+        className="object-cover w-full h-full rounded-lg shadow-lg"
+      />
+    </div>
+  );
+};
+
 
 export default GalleryPage;
