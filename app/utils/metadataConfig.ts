@@ -1,4 +1,4 @@
-// /app/utils/meatadataConfig.ts
+// /app/utils/metadataConfig.ts
 
 import type { Metadata } from "next";
 
@@ -56,6 +56,55 @@ const SEO_METADATA: Record<string, Metadata> = {
       title: "About Us | Havila Event Place",
       description:
         "Learn more about Havila Event Place, our mission, vision, and values.",
+    },
+  },
+  floorPlan: {
+    ...baseMetadata,
+    title: "Floor Plan | Havila Event Place",
+    description: "Explore the layout of Havila Event Place's venue and facilities.",
+    openGraph: {
+      ...baseMetadata.openGraph,
+      title: "Floor Plan | Havila Event Place",
+      description:
+        "Explore the layout of Havila Event Place's venue and facilities.",
+    },
+    twitter: {
+      ...baseMetadata.twitter,
+      title: "Floor Plan | Havila Event Place",
+      description:
+        "Explore the layout of Havila Event Place's venue and facilities.",
+    },
+  },
+  contactUs: {
+    ...baseMetadata,
+    title: "Contact Us | Havila Event Place",
+    description: "Get in touch with Havila Event Place for inquiries or bookings.",
+    openGraph: {
+      ...baseMetadata.openGraph,
+      title: "Contact Us | Havila Event Place",
+      description:
+        "Get in touch with Havila Event Place for inquiries or bookings.",
+    },
+    twitter: {
+      ...baseMetadata.twitter,
+      title: "Contact Us | Havila Event Place",
+      description:
+        "Get in touch with Havila Event Place for inquiries or bookings.",
+    },
+  },
+  gallery: {
+    ...baseMetadata,
+    title: "Gallery | Havila Event Place",
+    description: "View the stunning photos and videos of Havila Event Place.",
+    openGraph: {
+      ...baseMetadata.openGraph,
+      title: "Gallery | Havila Event Place",
+      description: "View the stunning photos and videos of Havila Event Place.",
+    },
+    twitter: {
+      ...baseMetadata.twitter,
+      title: "Gallery | Havila Event Place",
+      description: "View the stunning photos and videos of Havila Event Place.",
     },
   },
 };
