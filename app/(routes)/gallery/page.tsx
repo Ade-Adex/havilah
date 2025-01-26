@@ -112,7 +112,7 @@ import PagesHero from "@/app/components/PagesHero";
 import Heading from "@/app/components/Heading";
 import Line from "@/app/components/Line";
 import { getGalleryData } from "@/app/cache/useGalleryCache";
-import { Gallery } from "@/types/gallery"; 
+import { Gallery } from "@/app/types/gallery"; 
 import useInView from "@/app/hooks/useInView";
 
 const GalleryPage = () => {

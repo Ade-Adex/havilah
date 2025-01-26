@@ -1,6 +1,6 @@
 // /sanity/services/galleryService.ts
 
-import { Gallery } from "@/types/gallery";
+import { Gallery } from "@/app/types/gallery";
 import { client } from "../lib/client";
 
 // Fetch data from Sanity

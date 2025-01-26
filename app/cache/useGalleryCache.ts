@@ -1,7 +1,7 @@
 //  /cache/useGalleryCache.ts
 
 import { get, set } from "idb-keyval";
-import { Gallery } from "@/types/gallery";
+import { Gallery } from "@/app/types/gallery";
 import { fetchGallery } from "@/sanity/services/galleryServices";
 
 // Cache key for gallery data
