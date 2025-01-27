@@ -4,13 +4,112 @@ import React from "react";
 import ContactBg from "@/public/images/contact-bg.png";
 import { usePathname } from "next/navigation";
 import PagesHero from "@/app/components/PagesHero";
+import Heading from "@/app/components/Heading";
+import Line from "@/app/components/Line";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import { LatLngExpression } from "leaflet";
 
 const ContactUaPage = () => {
   const pathname = usePathname();
   const formattedPathname = pathname.replace("/", "");
+
+  // Coordinates for the map location
+  const position: LatLngExpression = [8.1339, 4.2432]; // Ogbomoso, Oyo State (example)
+
   return (
     <main>
       <PagesHero bgImage={ContactBg} pageTitle={formattedPathname} />
+      <div className="font-robotoSlab text-[14px] font-[300] leading-[18.46px] tracking-[-5%] text-center mt-24">
+        <h3 className="text-[16px] font-[600] leading-[21.1px] mb-6">VENUE INFO</h3>
+        <span className="">Beside Adeyi Filling Station</span>
+        <p>Orogun Area, Iresa Road</p>
+        <p>Ogbomoso, Oyo State</p>
+      </div>
+      <div className="font-robotoSlab text-[14px] font-[300] leading-[18.46px] tracking-[-5%] text-center mt-6">
+        <h3 className="text-[16px] font-[600] leading-[21.1px] mb-6">CONTACT US</h3>
+        <span>
+          Telephone:{" "}
+          <a href="tel:+2348033734820" className="hover:underline">
+            +2348033734820
+          </a>
+        </span>
+        <p>
+          E-mail:{" "}
+          <a href="mailto:hismercy03@gmail.com" className="hover:underline">
+            hismercy03@gmail.com
+          </a>
+        </p>
+      </div>
+
+      <div className="mt-24 mb-12">
+        <Heading text="Get in touch" text2="With Us" />
+        <Line ClassName="justify-center" />
+      </div>
+
+      {/* Form Section */}
+      <form
+        action=""
+        className="max-w-[600px] mx-auto space-y-6 mb-24 text-[14px] font-[400] leading-[24px] text-havilah-gray"
+      >
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <input
+            type="text"
+            placeholder="First Name"
+            className="w-full border border-gray-300 p-3 focus:outline-none focus:ring-0 focus:ring-gray-500"
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            className="w-full border border-gray-300 p-3 focus:outline-none focus:ring-0 focus:ring-gray-500"
+          />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <input
+            type="text"
+            placeholder="Phone Number"
+            className="w-full border border-gray-300 p-3 focus:outline-none focus:ring-0 focus:ring-gray-500"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full border border-gray-300 p-3 focus:outline-none focus:ring-0 focus:ring-gray-500"
+          />
+        </div>
+        <textarea
+          placeholder="Message"
+          className="w-full border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-gray-500"
+          rows={4}
+        ></textarea>
+        <button
+          type="submit"
+          className="w-full bg-[#C69C6D] text-white py-3 text-center font-semibold hover:bg-[#b3875d] transition-all"
+        >
+          Send Message
+        </button>
+      </form>
+
+      {/* Map Section */}
+      <div className="mt-12">
+        <div className="mt-6">
+          <MapContainer
+            center={position}
+            zoom={13}
+            scrollWheelZoom={false}
+            className="h-[480px] w-full z-40"
+          >
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            />
+            <Marker position={position}>
+              <Popup>
+                Beside Adeyi Filling Station <br /> Orogun Area, Iresa Road, Ogbomoso.
+              </Popup>
+            </Marker>
+          </MapContainer>
+        </div>
+      </div>
     </main>
   );
 };

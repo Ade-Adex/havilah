@@ -25,6 +25,7 @@ export default {
         "havilah-light-deep-cove": "#333362",
         "havilah-whiskey": "#CDA274",
         "havilah-light-whiskey": "#D5B089",
+        "havilah-gray": "#9A9EA5",
       },
       backgroundColor: {
         "dark-mode": "#000000", 
