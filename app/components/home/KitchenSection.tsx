@@ -31,7 +31,7 @@ const KitchenSection = () => {
       </div>
       <Heading text="Havilah " text2="Kitchen" className="flex justify-center" />
       <Line ClassName="justify-center" />
-      <section className="flex flex-col lg:flex-row  gap-y-4 lg:gap-y-0 items-center mt-16">
+      <section className="flex flex-col lg:flex-row  gap-y-4 lg:gap-y-0 items-center md:mt-16">
         <div className="lg:w-1/2 px-8 py-10 bg-white shadow-lg rounded-tl-lg rounded-bl-lg z-40">
           <SectionTitle text="Why Havilah Kitchen" />
           <SectionSubTitle text="Your Event, Our Culinary Excellence" />
