@@ -9,14 +9,15 @@ import PagesHero from "@/app/components/PagesHero";
 import Heading from "@/app/components/Heading";
 import Line from "@/app/components/Line";
 import { getGalleryData } from "@/app/cache/useGalleryCache";
-import { Gallery } from "@/app/types/gallery"; 
+import { Gallery } from "@/app/types/gallery";
 import useInView from "@/app/hooks/useInView";
-
+import GallerySkeleton from "./GallerySkeleton";
 const GalleryPage = () => {
   const pathname = usePathname();
   const formattedPathname = pathname.replace("/", "").toUpperCase();
   const [selectedCategory, setSelectedCategory] = useState("event");
   const [galleryImages, setGalleryImages] = useState<Gallery[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Fetch gallery data with caching
@@ -26,6 +27,8 @@ const GalleryPage = () => {
         setGalleryImages(data);
       } catch (error) {
         console.error("Error fetching gallery data:", error);
+      } finally {
+        setIsLoading(false); // Stop loading after data fetch
       }
     };
     fetchData();
@@ -59,32 +62,34 @@ const GalleryPage = () => {
           ))}
         </div>
 
-        {/* Display media for the selected category */}
-        {galleryImages
-          .filter((category) => category.category === selectedCategory)
-          .map((filteredCategory) => (
-            <div key={filteredCategory.category}>
-              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {filteredCategory.images.map((media, index) => {
-                  const mediaSrc = media.src.asset.url; // Get the media URL
+        {/* Display media or skeleton for the selected category */}
+        {isLoading ? (
+          <GallerySkeleton />
+        ) : (
+          galleryImages
+            .filter((category) => category.category === selectedCategory)
+            .map((filteredCategory) => (
+              <div key={filteredCategory.category}>
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {filteredCategory.images.map((media, index) => {
+                    const mediaSrc = media.src.asset.url;
 
-                  if (mediaSrc.endsWith(".mp4")) {
-                    // Handle video
-                    return <VideoThumbnail key={index} videoSrc={mediaSrc} />;
-                  } else {
-                    // Handle image
-                    return (
-                      <AnimatedImage
-                        key={index}
-                        image={mediaSrc}
-                        alt={`${filteredCategory.category} Image ${index + 1}`}
-                      />
-                    );
-                  }
-                })}
+                    if (mediaSrc.endsWith(".mp4")) {
+                      return <VideoThumbnail key={index} videoSrc={mediaSrc} />;
+                    } else {
+                      return (
+                        <AnimatedImage
+                          key={index}
+                          image={mediaSrc}
+                          alt={`${filteredCategory.category} Image ${index + 1}`}
+                        />
+                      );
+                    }
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+        )}
       </div>
     </main>
   );
@@ -111,8 +116,8 @@ const AnimatedImage = ({ image, alt }: AnimatedImageProps) => {
         alt={alt}
         priority
         layout="responsive"
-        width={200} // width of the image in the aspect ratio
-        height={200} // height in the aspect ratio
+        width={200}
+        height={200}
         className="object-cover"
       />
     </div>
