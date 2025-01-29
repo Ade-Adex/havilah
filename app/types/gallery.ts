@@ -13,3 +13,5 @@ export interface Gallery {
   category: "event" | "hall" | "video";
   images: Media[];
 }
+
+

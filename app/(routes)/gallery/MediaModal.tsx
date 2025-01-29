@@ -4,14 +4,16 @@ import Image from "next/image";
 import { IoClose } from "react-icons/io5";
 
 // Define types for media object
-type Media = {
+// Define types for media object
+export interface MediaProps {
   type: "image" | "video";  // Can be either image or video
   src: string;              // Media source URL
   description: string;      // Description for the media
-};
+}
+
 
 type MediaModalProps = {
-  media: Media;            // Use the defined Media type
+  media: MediaProps;            // Use the defined Media type
   closeModal: () => void;
 };
 

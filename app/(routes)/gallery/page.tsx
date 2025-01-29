@@ -183,6 +183,21 @@
 
 // export default GalleryPage;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -198,7 +213,7 @@ import { Gallery } from "@/app/types/gallery";
 import useInView from "@/app/hooks/useInView";
 import GallerySkeleton from "./GallerySkeleton";
 import { FaPlay } from "react-icons/fa";
-import MediaModal from "./MediaModal";
+import MediaModal, { MediaProps } from "./MediaModal";
 
 const GalleryPage = () => {
   const pathname = usePathname();
@@ -206,7 +221,9 @@ const GalleryPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("event");
   const [galleryImages, setGalleryImages] = useState<Gallery[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [selectedMedia, setSelectedMedia] = useState<any | null>(null);
+  const [selectedMedia, setSelectedMedia] = useState<MediaProps | null>(null);
+
+  console.log("selected",selectedMedia);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -222,7 +239,7 @@ const GalleryPage = () => {
     fetchData();
   }, []);
 
-  const openModal = (media: any) => {
+  const openModal = (media: MediaProps) => {
     setSelectedMedia(media);
   };
 
@@ -320,7 +337,7 @@ type AnimatedImageProps = {
   image: string;
   alt: string;
   description: string;
-  openModal: (media: any) => void;
+  openModal: (media: MediaProps) => void;
 };
 
 const AnimatedImage = ({
@@ -334,7 +351,7 @@ const AnimatedImage = ({
   return (
     <div
       ref={ref}
-      className={`relative w-full h-full overflow-hidden transition-all duration-700 ease-out transform ${
+      className={`relative w-full h-full overflow-hidden transition-all duration-700 ease-out transform cursor-pointer ${
         isInView
           ? "opacity-100 scale-100 rotate-0"
           : "opacity-0 scale-90 rotate-3"
@@ -359,7 +376,7 @@ const AnimatedImage = ({
 type VideoThumbnailProps = {
   videoSrc: string;
   description: string;
-  openModal: (media: any) => void;
+  openModal: (media: MediaProps) => void;
 };
 
 const VideoThumbnail = ({
