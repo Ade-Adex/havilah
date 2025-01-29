@@ -3,8 +3,15 @@ import ReactPlayer from "react-player";
 import Image from "next/image";
 import { IoClose } from "react-icons/io5";
 
+// Define types for media object
+type Media = {
+  type: "image" | "video";  // Can be either image or video
+  src: string;              // Media source URL
+  description: string;      // Description for the media
+};
+
 type MediaModalProps = {
-  media: any;
+  media: Media;            // Use the defined Media type
   closeModal: () => void;
 };
 
