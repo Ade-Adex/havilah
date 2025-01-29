@@ -12,7 +12,7 @@ import { getGalleryData } from "@/app/cache/useGalleryCache";
 import { Gallery } from "@/app/types/gallery";
 import useInView from "@/app/hooks/useInView";
 import GallerySkeleton from "./GallerySkeleton";
-import { FaPlay, FaPause } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
 
 const GalleryPage = () => {
   const pathname = usePathname();
