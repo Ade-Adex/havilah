@@ -358,6 +358,10 @@ type VideoThumbnailProps = {
 const VideoThumbnail = ({ videoSrc, description, openModal }: VideoThumbnailProps) => {
   const { ref, isInView } = useInView(0.2);
   const [isPlaying, setIsPlaying] = useState(false);
+  
+  const handlePlayButtonClick = () => {
+    setIsPlaying(true); // Update state when the play button is clicked
+  };
 
   return (
     <div
@@ -376,7 +380,7 @@ const VideoThumbnail = ({ videoSrc, description, openModal }: VideoThumbnailProp
             muted
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <button className="px-4 py-4 bg-black/80 text-white rounded-full">
+            <button className="px-4 py-4 bg-black/80 text-white rounded-full" onClick={handlePlayButtonClick}>
               <FaPlay size={16} />
             </button>
           </div>
