@@ -183,13 +183,7 @@
 
 // export default GalleryPage;
 
-
-
-
-
-
-'use client'
-
+"use client";
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
@@ -279,7 +273,8 @@ const GalleryPage = () => {
                 >
                   {filteredCategory.images.map((media, index) => {
                     const mediaSrc = media.src.asset.url;
-                    const mediaDescription = media.description || "No description available";
+                    const mediaDescription =
+                      media.description || "No description available";
 
                     if (mediaSrc.endsWith(".mp4")) {
                       return (
@@ -308,7 +303,12 @@ const GalleryPage = () => {
         )}
 
         {/* Display modal when selected media is not null */}
-        {selectedMedia && <MediaModal media={selectedMedia} closeModal={() => setSelectedMedia(null)} />}
+        {selectedMedia && (
+          <MediaModal
+            media={selectedMedia}
+            closeModal={() => setSelectedMedia(null)}
+          />
+        )}
       </div>
     </main>
   );
@@ -323,14 +323,21 @@ type AnimatedImageProps = {
   openModal: (media: any) => void;
 };
 
-const AnimatedImage = ({ image, alt, description, openModal }: AnimatedImageProps) => {
+const AnimatedImage = ({
+  image,
+  alt,
+  description,
+  openModal,
+}: AnimatedImageProps) => {
   const { ref, isInView } = useInView(0.2);
 
   return (
     <div
       ref={ref}
       className={`relative w-full h-full overflow-hidden transition-all duration-700 ease-out transform ${
-        isInView ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-90 rotate-3"
+        isInView
+          ? "opacity-100 scale-100 rotate-0"
+          : "opacity-0 scale-90 rotate-3"
       }`}
       onClick={() => openModal({ type: "image", src: image, description })}
     >
@@ -355,10 +362,14 @@ type VideoThumbnailProps = {
   openModal: (media: any) => void;
 };
 
-const VideoThumbnail = ({ videoSrc, description, openModal }: VideoThumbnailProps) => {
+const VideoThumbnail = ({
+  videoSrc,
+  description,
+  openModal,
+}: VideoThumbnailProps) => {
   const { ref, isInView } = useInView(0.2);
   const [isPlaying, setIsPlaying] = useState(false);
-  
+
   const handlePlayButtonClick = () => {
     setIsPlaying(true); // Update state when the play button is clicked
   };
@@ -367,7 +378,9 @@ const VideoThumbnail = ({ videoSrc, description, openModal }: VideoThumbnailProp
     <div
       ref={ref}
       className={`relative w-full h-full overflow-hidden transition-all duration-700 ease-out transform rounded-xl ${
-        isInView ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-90 rotate-3"
+        isInView
+          ? "opacity-100 scale-100 rotate-0"
+          : "opacity-0 scale-90 rotate-3"
       }`}
       onClick={() => openModal({ type: "video", src: videoSrc, description })}
     >
@@ -380,18 +393,26 @@ const VideoThumbnail = ({ videoSrc, description, openModal }: VideoThumbnailProp
             muted
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <button className="px-4 py-4 bg-black/80 text-white rounded-full" onClick={handlePlayButtonClick}>
+            <button
+              className="px-4 py-4 bg-black/80 text-white rounded-full"
+              onClick={handlePlayButtonClick}
+            >
               <FaPlay size={16} />
             </button>
           </div>
         </div>
       ) : (
-        <ReactPlayer url={videoSrc} playing controls width="100%" height="100%" />
+        <ReactPlayer
+          url={videoSrc}
+          playing
+          controls
+          width="100%"
+          height="100%"
+        />
       )}
       {/* <p className="absolute bottom-4 left-4 text-white">{description}</p> */}
     </div>
   );
 };
-
 
 export default GalleryPage;
