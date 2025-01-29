@@ -21,8 +21,8 @@ const PagesHero: React.FC<PagesHeroProps> = ({ bgImage, pageTitle }) => {
         className="z-[-1] h-full" // Optional: If you need other elements to overlay
       />
       {/* Text overlay or additional content */}
-      <div className="absolute top-[50%] lg:top-[50%] left-[10%] flex flex-col gap-5 text-white text-[18px] font-[500] font-robotoSlab">
-        <h1 className="text-3xl md:text-5xl font-bold font-robotoSlab capitalize">
+      <div className="absolute top-[50%] lg:top-[50%] left-[10%] flex flex-col gap-5 text-white text-[14px] md:text-[18px] font-[500] font-robotoSlab">
+        <h1 className="text-2xl md:text-5xl font-bold font-robotoSlab capitalize">
           {pageTitle}
         </h1>
         <div className="flex gap-3">
