@@ -31,7 +31,7 @@ const EventSection = () => {
       </div>
       <button
         onClick={handleViewAll}
-        className="flex mx-auto my-[73px] text-[12px] leading-[15.83px] uppercase font-[500] font-robotoSlab text-white bg-havilah-deep-cove p-3 rounded-sm"
+        className="flex mx-auto my-[73px] text-[10px] md:text-[12px] md:leading-[15.83px] uppercase font-[500] font-robotoSlab text-white bg-havilah-deep-cove p-3 rounded-sm"
       >
         {showAll ? "SHOW LESS" : "VIEW ALL EVENTS"}
       </button>

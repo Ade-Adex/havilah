@@ -7,7 +7,7 @@ interface SectionContentProps {
 
 const SectionContent = ({ text, highlightedtext }: SectionContentProps) => {
   return (
-    <div className={`text-[14px] md:text-[16px]`}>
+    <div className={`text-[12px] md:text-[16px]`}>
       <span className="text-havilah-whiskey">{highlightedtext}</span>
       <span className="dark:text-black">{text}</span>
     </div>

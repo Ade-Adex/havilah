@@ -29,7 +29,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
       }`}
     >
       {/* Image */}
-      <div className="relative h-[292px] w-full">
+      <div className="relative h-[200px] md:h-[292px] w-full">
         <Image
           src={imageUrl}
           alt={title}
@@ -43,7 +43,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
       <div className="p-[15px] flex flex-col flex-1">
         {/* Title */}
         <h2
-          className="text-lg font-semibold text-havilah-deep-cove font-robotoSlab line-clamp-2 min-h-[24px] md:min-h-[48px]"
+          className="text-[14px] md:text-lg font-semibold text-havilah-deep-cove font-robotoSlab line-clamp-2 min-h-[24px] md:min-h-[48px]"
           title={title}
         >
           {title}
@@ -51,10 +51,10 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
 
         {/* Type and Date */}
         <div className="flex justify-between items-center mt-3">
-          <div className="text-[12px] leading-[15.83px] uppercase font-[500] font-robotoSlab text-white bg-havilah-deep-cove p-3 rounded-sm">
+          <div className="text-[10px] md:text-[12px] md:leading-[15.83px] uppercase font-[500] font-robotoSlab text-white bg-havilah-deep-cove p-2 md:p-3 rounded-sm">
             {type}
           </div>
-          <div className="flex items-center text-gray-500">
+          <div className="flex items-center text-[12px] md:text-[14px]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 mr-2"
@@ -74,12 +74,12 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
         </div>
 
         {/* Description */}
-        <p className="mt-4 text-gray-700 flex-1">{description}</p>
+        <p className="mt-4 text-[12px] md:text-[14px] flex-1">{description}</p>
 
         {/* Status */}
         <div className="mt-4 flex items-center">
           <span
-            className={`text-sm font-semibold flex items-center text-havilah-deep-cove`}
+            className={`text-[10px] md:text-[12px] font-semibold flex items-center text-havilah-deep-cove`}
           >
             {status === "Pending" && (
               <Image src={loading} alt="Pending" className="h-5 w-5 mr-2" />

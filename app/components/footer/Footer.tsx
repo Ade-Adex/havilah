@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="">
           <div className="flex flex-col lg:flex-row justify-between px-5 lg:px-36">
             {/* Reach Us Section */}
-            <div className="mb-10 lg:mb-0 lg:max-w-[224px]  font-robotoSlab text-[15px] leading-[19.76px]">
+            <div className="mb-10 lg:mb-0 lg:max-w-[224px]  font-robotoSlab text-[12px] md:text-[15px] md:leading-[19.76px]">
               <h4 className="font-bold mb-5">Reach Us</h4>
               <p className="mb-[24px] font-[400] font-montserrat">
                 We&apos;re here to help make your event extraordinary! Whether
@@ -39,14 +39,14 @@ const Footer = () => {
                 here to support you.
               </p>
               <ul className="flex flex-col gap-5">
-                <li className="relative font-[400] text-[14px]">
+                <li className="relative font-[400] text-[11px] md:text-[14px]">
                   <SlLocationPin className="absolute top-0" size={24} />
                   <div className="ml-8">
                     Beside Adeyi Filling Station, Orogun Area, Iresa Road,
                     Ogbomoso, Oyo State
                   </div>
                 </li>
-                <li className="relative font-[400] text-[14px]">
+                <li className="relative font-[400] text-[11px] md:text-[14px]">
                   <FaRegEnvelope className="absolute top-0" size={24} />
                   <div className="ml-8">
                     <a
@@ -57,7 +57,7 @@ const Footer = () => {
                     </a>
                   </div>
                 </li>
-                <li className="relative mt-3 font-[400] text-[14px]">
+                <li className="relative mt-3 font-[400] text-[11px] md:text-[14px]">
                   <FiPhoneCall className="absolute top-0" size={24} />
                   <div className="ml-8">
                     <a href="tel:+2348033734820" className="hover:underline">
@@ -107,14 +107,14 @@ const Footer = () => {
 
             {/* Hot Links Section */}
             <div className="max-w-[250px]">
-              <h2 className="text-lg font-bold mb-5 font-robotoSlab uppercase">
+              <h2 className="text-[14px] md:text-lg font-bold mb-5 font-robotoSlab uppercase">
                 Hot Links
               </h2>
               <ul>
                 {footerLinks.map((link, index) => (
                   <li
                     key={index}
-                    className="font-[400] font-robotoSlab text-[14px] mb-3 hover:underline cursor-pointer"
+                    className="font-[400] font-robotoSlab text-[12px] md:text-[14px] mb-3 hover:underline cursor-pointer"
                   >
                     <Link href={link.path}>{link.label}</Link>
                   </li>
@@ -153,7 +153,7 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className=" pt-12 pb-8 flex items-center justify-center border-t border-gray-700">
-          <p className="text-[12px] font-[300] font-robotoSlab text-gray-400">
+          <p className="text-[10px] md:text-[12px] font-[300] font-robotoSlab text-gray-400">
             © 2024, Havilah Events Place. All Rights Reserved
           </p>
         </div>
