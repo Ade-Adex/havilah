@@ -12,6 +12,8 @@ import { getGalleryData } from "@/app/cache/useGalleryCache";
 import { Gallery } from "@/app/types/gallery";
 import useInView from "@/app/hooks/useInView";
 import GallerySkeleton from "./GallerySkeleton";
+import { FaPlay, FaPause } from "react-icons/fa";
+
 const GalleryPage = () => {
   const pathname = usePathname();
   const formattedPathname = pathname.replace("/", "").toUpperCase();
@@ -70,7 +72,15 @@ const GalleryPage = () => {
             .filter((category) => category.category === selectedCategory)
             .map((filteredCategory) => (
               <div key={filteredCategory.category}>
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div
+                  className={`grid grid-cols-2 sm:grid-cols-2 ${
+                    filteredCategory.images.some((media) =>
+                      media.src.asset.url.endsWith(".mp4")
+                    )
+                      ? "md:grid-cols-3"
+                      : "md:grid-cols-3 lg:grid-cols-4"
+                  } gap-4`}
+                >
                   {filteredCategory.images.map((media, index) => {
                     const mediaSrc = media.src.asset.url;
 
@@ -108,7 +118,9 @@ const AnimatedImage = ({ image, alt }: AnimatedImageProps) => {
     <div
       ref={ref}
       className={`relative w-full h-full overflow-hidden transition-all duration-700 ease-out transform ${
-        isInView ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-90 rotate-3"
+        isInView
+          ? "opacity-100 scale-100 rotate-0"
+          : "opacity-0 scale-90 rotate-3"
       }`}
     >
       <Image
@@ -136,26 +148,34 @@ const VideoThumbnail = ({ videoSrc }: VideoThumbnailProps) => {
   return (
     <div
       ref={ref}
-      className={`relative w-full h-full overflow-hidden transition-all duration-700 ease-out transform ${
-        isInView ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-90 rotate-3"
+      className={`relative w-full h-full overflow-hidden transition-all duration-700 ease-out transform  rounded-xl ${
+        isInView
+          ? "opacity-100 scale-100 rotate-0"
+          : "opacity-0 scale-90 rotate-3"
       }`}
     >
       {!isPlaying ? (
-        <div className="cursor-pointer" onClick={() => setIsPlaying(true)}>
+        <div className="cursor-pointer " onClick={() => setIsPlaying(true)}>
           <video
             src={videoSrc}
-            className="w-full h-full object-cover"
+            className="w-full h-[160px] md:h-[200px] object-cover "
             controls={false}
             muted
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <button className="px-4 py-2 bg-white text-black rounded-md">
-              Play
+            <button className="px-4 py-4 bg-black/80 text-white rounded-full">
+              <FaPlay size={16} />
             </button>
           </div>
         </div>
       ) : (
-        <ReactPlayer url={videoSrc} playing controls width="100%" height="100%" />
+        <ReactPlayer
+          url={videoSrc}
+          playing
+          controls
+          width="100%"
+          height="100%"
+        />
       )}
     </div>
   );
