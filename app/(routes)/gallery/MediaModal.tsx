@@ -56,7 +56,7 @@ const MediaModal = ({ media, closeModal }: MediaModalProps) => {
             />
           </div>
         )}
-        <p className="mt-4 text-lg">{media.description}</p>
+        <p className="mt-4 text-[14px] md:text-[16px]">{media.description}</p>
       </div>
     </div>
   );

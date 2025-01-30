@@ -260,7 +260,7 @@ const GalleryPage = () => {
             <button
               key={index}
               onClick={() => setSelectedCategory(category.category)}
-              className={`px-4 py-2 text-[16px] font-[500] capitalize font-robotoSlab leading-[21.1px] ${
+              className={`px-4 py-2 text-[14px] md:text-[16px] font-[500] capitalize font-robotoSlab leading-[21.1px] ${
                 selectedCategory === category.category
                   ? "text-havilah-whiskey underline"
                   : "text-havilah-deep-cove"

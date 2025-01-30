@@ -33,14 +33,14 @@ const ContactUaPage = () => {
   return (
     <main className="">
       <PagesHero bgImage={ContactBg} pageTitle={formattedPathname} />
-      <div className="font-robotoSlab text-[14px] font-[300] leading-[18.46px] tracking-[-5%] text-center mt-24 ">
-        <h3 className="text-[16px] font-[600] leading-[21.1px] mb-6">VENUE INFO</h3>
+      <div className="font-robotoSlab text-[12px] md:text-[14px] font-[300] leading-[18.46px] tracking-[-5%] text-center mt-24 ">
+        <h3 className="text-[14px] md:text-[16px] font-[600] md:leading-[21.1px] mb-6">VENUE INFO</h3>
         <span className="">Beside Adeyi Filling Station</span>
         <p>Orogun Area, Iresa Road</p>
         <p>Ogbomoso, Oyo State</p>
       </div>
-      <div className="font-robotoSlab text-[14px] font-[300] leading-[18.46px] tracking-[-5%] text-center mt-6">
-        <h3 className="text-[16px] font-[600] leading-[21.1px] mb-6">CONTACT US</h3>
+      <div className="font-robotoSlab text-[12px] md:text-[14px] font-[300] leading-[18.46px] tracking-[-5%] text-center mt-6">
+        <h3 className="text-[14px] md:text-[16px] font-[600] md:leading-[21.1px] mb-6">CONTACT US</h3>
         <span>
           Telephone:{" "}
           <a href="tel:+2348033734820" className="hover:underline">
@@ -63,7 +63,7 @@ const ContactUaPage = () => {
       {/* Form Section */}
       <form
         action=""
-        className="max-w-[600px] mx-auto space-y-6 mb-24 text-[14px] font-[400] leading-[24px] text-havilah-gray py-8 px-4 md:px-0"
+        className="max-w-[600px] mx-auto space-y-6 mb-24 text-[12px] md:text-[14px] font-[400] md:leading-[24px] text-havilah-gray py-8 px-4 md:px-0"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <input

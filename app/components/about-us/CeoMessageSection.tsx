@@ -18,10 +18,10 @@ const CeoMessageSection = () => (
     <Heading
       text="WORD FROM "
       text2="OUR CEO"
-      className="flex flex-col md:flex-row text-start justify-center md:justify-start"
+      className="flex flex-row md:flex-row text-start justify-center md:justify-start"
     />
-    <Line ClassName="justify-start" />
-    <div className="font-[400] text-[14px] md:text-[16px]">
+    <Line ClassName="justify-center md:justify-start" />
+    <div className="font-[400] text-[12px] md:text-[16px]">
       Welcome to{" "}
       <span className="text-havilah-whiskey font-semibold">
         Havilah Events Place,
