@@ -4,12 +4,22 @@ import Image from "next/image";
 import space from "@/public/images/Space.png";
 import location from "@/public/images/Location.png";
 import waiter from "@/public/images/waiter.png";
-import centeredCardImage from "@/public/images/Group 1691.png";
-import CardImage from "@/public/images/Group 1000004532.png";
+import centeredCardImage from "@/public/images/aboutImage.png";
 
 const EventSpaceAndLocationSection = () => (
-  <main className="pt-[200px] pb-[100px]">
-    <div className="flex justify-center px-5 relative">
+  <main className="py-8 lg:pt-[200px] lg:pb-[100px]">
+    <div className="flex flex-col lg:flex-row justify-center px-5 relative gap-5">
+      <div className=" lg:hidden">
+        {/* Centered Image */}
+        <Image
+          src={centeredCardImage}
+          alt="Centered Event Image"
+          className="object-cover"
+          priority
+        />
+      </div>
+
+      {/* top left About Card */}
       <div className="inline-block relative">
         <AboutCard
           imageSrc={space}
@@ -19,7 +29,7 @@ const EventSpaceAndLocationSection = () => (
 
         {/* lines below space card */}
 
-        <div className="absolute lg:top-[240px] xl:top-[260px] left-[70%] flex items-center w-[300px]">
+        <div className="absolute lg:top-[240px] xl:top-[260px] left-[70%] flex items-center w-[300px] hidden lg:flex">
           {/* left vertical line */}
           <div className="lg:h-[50px] xl:h-[70px] w-[2px] bg-[#1C1A47]"></div>
           {/* left top circle */}
@@ -30,12 +40,12 @@ const EventSpaceAndLocationSection = () => (
         </div>
       </div>
 
-      
-      <div className="relative w-[40%] flex items-center justify-center">
-        
-        <div className="absolute top-[-5px] left-[60%] flex items-center w-[300px]">
+      <div className="relative w-[40%] flex items-center justify-center hidden lg:flex">
+        {/* Lines from the centered Image to the Top Right About Card */}
+
+        <div className="absolute top-[-5px] left-[60%] flex items-center w-[300px] ">
           {/* left vertical line */}
-          <div className="lg:h-[50px] xl:h-[70px] w-[2px] bg-[#1C1A47] absolute left-[6px] top-[50%]"></div>
+          <div className="h-[50px]  w-[2px] bg-[#1C1A47] absolute left-[6px] top-[50%]"></div>
           {/* left bottom circle */}
           <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] mx-[1px] absolute left-0 top-[450%]"></div>
           {/* Left top circle */}
@@ -49,22 +59,18 @@ const EventSpaceAndLocationSection = () => (
           {/* Right bottom circle */}
           <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] mx-[1px] absolute right-[0px] lg:top-[400%] xl:top-[550%]"></div>
         </div>
+
+        {/* Centered Image */}
         <Image
           src={centeredCardImage}
           alt="Centered Event Image"
-          className="object-cover lg:mt-[-30px] xl:mt-[0] lg:max-w-[280px] xl:max-w-[358px]"
-          priority
-        />
-
-        <Image
-          src={CardImage}
-          alt="Centered Event Image"
-          className="w-full h-auto object-cover rounded-lg absolute top-16"
+          className="object-cover"
           priority
         />
       </div>
 
-      <div className="inline-block mt-[5%]">
+      {/* Top right About Card */}
+      <div className="lg:inline-block lg:mt-[5%]">
         <AboutCard
           imageSrc={location}
           title="Prime Location"
@@ -73,7 +79,8 @@ const EventSpaceAndLocationSection = () => (
       </div>
     </div>
 
-    <div className="lg:mt-[2%] lg:ml-[53%] xl:mt-[7%] xl:ml-[53%] relative">
+    <div className="px-5 lg:px-[unset] mt-5 lg:mt-[2%] lg:ml-[53%]  relative">
+      {/* Bottom  */}
       <AboutCard
         imageSrc={waiter}
         title="On-Site Catering"
@@ -82,18 +89,18 @@ const EventSpaceAndLocationSection = () => (
 
       {/* lines in front of waiter card */}
 
-      <div className="absolute lg:top-[-3%] xl:top-[-9%] left-[-15%] flex items-center lg:w-[70px] xl:w-[100px]">
-          {/* left vertical line */}
-          <div className="lg:h-[140px] xl:h-[140px] w-[2px] bg-[#1C1A47]"></div>
-          {/* left top circle */}
-          <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[-2%] xl:top-[0%] left-[-5px]"></div>
-          {/* left bottom circle */}
-          <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[95%] xl:top-[95%] left-[-5px]"></div>
-          {/* horizontal line */}
-          <div className="flex-1 h-[2px] bg-[#1C1A47] lg:mt-[200%] xl:mt-[138%]"></div>
-          {/* horizontal line right circle */}
-          <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[95%] xl:top-[95%] left-[94%]"></div>
-        </div>
+      <div className="absolute top-[-12%] left-[-15%] flex items-center lg:w-[70px] xl:w-[100px] hidden lg:flex">
+        {/* left vertical line */}
+        <div className="lg:h-[140px] xl:h-[140px] w-[2px] bg-[#1C1A47]"></div>
+        {/* left top circle */}
+        <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[-2%] xl:top-[0%] left-[-5px]"></div>
+        {/* left bottom circle */}
+        <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[95%] xl:top-[95%] left-[-5px]"></div>
+        {/* horizontal line */}
+        <div className="flex-1 h-[2px] bg-[#1C1A47] lg:mt-[200%] xl:mt-[138%]"></div>
+        {/* horizontal line right circle */}
+        <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[95%] xl:top-[95%] left-[94%]"></div>
+      </div>
     </div>
   </main>
 );

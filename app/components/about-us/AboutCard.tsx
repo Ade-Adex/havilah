@@ -9,9 +9,9 @@ interface AboutCardProps {
 
 const AboutCard: React.FC<AboutCardProps> = ({ imageSrc, title, content }) => {
   return (
-    <div className="bg-havilah-card rounded-lg px-3 pt-3 pb-6 font-robotoSlab lg:max-w-[300px] lg:min-h-[200px] xl:max-w-[378px] xl:min-h-[253px]">
+    <div className="bg-havilah-card rounded-lg px-3 pt-3 pb-6 font-robotoSlab w-full lg:max-w-[300px] lg:min-h-[200px] xl:max-w-[378px] xl:min-h-[253px]">
       <div className="flex gap-3 mb-3 items-center">
-        <div className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] relative">
+        <div className="w-[30px] h-[30px] md:w-[50px] md:h-[50px] relative">
           <Image
             src={imageSrc}
             alt={title}
@@ -20,11 +20,11 @@ const AboutCard: React.FC<AboutCardProps> = ({ imageSrc, title, content }) => {
             height={100}
           />
         </div>
-        <span className="text-[20px] text-havilah-deep-cove font-semibold">
+        <span className="text-[16px] md:text-[20px] text-havilah-deep-cove font-semibold">
           {title}
         </span>
       </div>
-      <div className="text-[15px] md:text-[18px] font-[400] text-[#555555]">{content}</div>
+      <div className="text-[14px] md:text-[18px] font-[400] text-[#555555]">{content}</div>
     </div>
   );
 };
