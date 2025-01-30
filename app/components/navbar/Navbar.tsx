@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useDisclosure } from "@mantine/hooks";
 import { Burger } from "@mantine/core";
 import navLinks from "./navLinks";
-import ThemeToggle from "./ThemeToggle";
+// import ThemeToggle from "./ThemeToggle";
 import LogoSection from "./LogoSection";
 import DesktopNavLinks from "./DesktopNavLinks";
 import MobileMenu from "./MobileMenu";
@@ -44,7 +44,7 @@ const Navbar = () => {
               lineSize={2}
               size="lg"
             />
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
           </div>
         </div>
 

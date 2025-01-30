@@ -5,7 +5,7 @@ import Heading from "../Heading";
 import client from "@/public/images/client.png";
 
 const CeoMessageSection = () => (
-  <div className="mx-auto xl:max-w-[1099px] grid grid-cols-1 md:grid-cols-2 mt-16 gap-7 px-4 md:px-12 lg:px-16 xl:px-[unset]">
+  <div className="mx-auto xl:max-w-[1099px] grid grid-cols-1 md:grid-cols-2 items-center mt-16 gap-7 px-4 md:px-12 lg:px-16 xl:px-[unset]">
   <div className="w-full relative">
     <Image
       src={client}

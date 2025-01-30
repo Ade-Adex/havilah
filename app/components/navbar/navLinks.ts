@@ -4,7 +4,6 @@ const navLinks = [
     label: "About Us",
     path: "/about-us",
   },
-  { label: "Contact Us", path: "/contact-us" },
   {
     label: "Floor Plan",
     path: "/floor-plan",
@@ -13,6 +12,7 @@ const navLinks = [
     label: "Gallery",
     path: "/gallery",
   },
+  { label: "Contact Us", path: "/contact-us" },
 ];
 
 export default navLinks;
