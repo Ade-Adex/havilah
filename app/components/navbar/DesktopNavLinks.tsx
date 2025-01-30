@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Import usePathname
-import ThemeToggle from "./ThemeToggle";
+// import ThemeToggle from "./ThemeToggle";
 import { NavLinkProps } from "@/app/types/navbarLinks";
 
 interface DesktopNavLinksProps {
