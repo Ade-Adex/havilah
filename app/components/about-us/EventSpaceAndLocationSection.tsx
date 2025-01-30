@@ -7,9 +7,9 @@ import waiter from "@/public/images/waiter.png";
 import centeredCardImage from "@/public/images/aboutImage.png";
 
 const EventSpaceAndLocationSection = () => (
-  <main className="py-8 lg:pt-[200px] lg:pb-[100px]">
-    <div className="flex flex-col lg:flex-row justify-center px-5 relative gap-5">
-      <div className=" lg:hidden">
+  <main className="py-8 lg:pt-[200px] lg:pb-[100px] px-4 md:px-12 lg:px-16 xl:px-[unset]">
+    <div className="flex flex-col lg:flex-row justify-center relative gap-5">
+      <div className="flex items-center justify-center lg:hidden">
         {/* Centered Image */}
         <Image
           src={centeredCardImage}
@@ -79,7 +79,7 @@ const EventSpaceAndLocationSection = () => (
       </div>
     </div>
 
-    <div className="px-5 lg:px-[unset] mt-5 lg:mt-[2%] lg:ml-[53%]  relative">
+    <div className="lg:px-[unset] mt-5 lg:mt-[2%] lg:ml-[53%]  relative">
       {/* Bottom  */}
       <AboutCard
         imageSrc={waiter}
