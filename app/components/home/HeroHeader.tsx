@@ -52,11 +52,18 @@ const HeroHeader = () => {
     }
   };
 
-  const handleBeforeChange = (newIndex: number) => {
+  // const handleBeforeChange = (newIndex: number) => {
+  //   const totalSlides = heroImages.length;
+  //   const progressValue = ((newIndex + 1) / totalSlides) * 100;
+  //   setProgress(progressValue);
+  // };
+
+  const handleAfterChange = (currentIndex: number) => {
     const totalSlides = heroImages.length;
-    const progressValue = ((newIndex + 1) / totalSlides) * 100;
+    const progressValue = ((currentIndex + 1) / totalSlides) * 100;
     setProgress(progressValue);
   };
+  
 
   return (
     <header className="relative md:h-screen overflow-hidden">
@@ -72,7 +79,8 @@ const HeroHeader = () => {
         nextArrow={<NextArrow onClick={() => {}} />}
         prevArrow={<PrevArrow onClick={() => {}} />}
         className="w-full h-[85vh] md:h-full"
-        beforeChange={(_, newIndex) => handleBeforeChange(newIndex)}
+        afterChange={handleAfterChange}
+        // beforeChange={(_, newIndex) => handleBeforeChange(newIndex)}
       >
         {heroImages.map((image, index) => (
           <motion.div
@@ -96,7 +104,7 @@ const HeroHeader = () => {
 
       <div className="absolute bottom-8 md:bottom-10 left-1/2 transform -translate-x-1/2 w-3/12 md:w-2/12 h-1 bg-gray-300">
         <div
-          className="h-full bg-titan-blue"
+          className="h-full bg-blue-500"
           style={{ width: `${progress}%`, transition: "width 0.5s ease" }}
         ></div>
       </div>
