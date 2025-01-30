@@ -104,7 +104,7 @@ const HeroHeader = () => {
 
       <div className="absolute bottom-8 md:bottom-10 left-1/2 transform -translate-x-1/2 w-3/12 md:w-2/12 h-1 bg-gray-300">
         <div
-          className="h-full bg-blue-500"
+          className="h-full bg-havilah-deep-cove"
           style={{ width: `${progress}%`, transition: "width 0.5s ease" }}
         ></div>
       </div>
