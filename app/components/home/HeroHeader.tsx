@@ -59,7 +59,7 @@ const HeroHeader = () => {
   };
 
   return (
-    <header className="relative h-[85vh] md:h-screen overflow-hidden">
+    <header className="relative md:h-screen overflow-hidden">
       <Slider
         ref={sliderRef}
         dots={false}
