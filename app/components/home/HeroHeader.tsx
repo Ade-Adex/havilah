@@ -78,7 +78,7 @@ const HeroHeader = () => {
         autoplaySpeed={5000}
         nextArrow={<NextArrow onClick={() => {}} />}
         prevArrow={<PrevArrow onClick={() => {}} />}
-        className="w-full h-[85vh] md:h-full"
+        className="w-full h-full"
         afterChange={handleAfterChange}
         // beforeChange={(_, newIndex) => handleBeforeChange(newIndex)}
       >
