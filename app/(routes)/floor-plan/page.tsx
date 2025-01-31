@@ -11,7 +11,7 @@ const FloorPlanPage = () => {
   const pathname = usePathname();
   const formattedPathname = pathname.replace("/", "");
   return (
-    <main className="pb-10 lg:pb-60">
+    <main className="pb-10 lg:pb-48">
       <PagesHero bgImage={floorBg} pageTitle={formattedPathname} />
       <StageSection/>
       <FloorSection/>
