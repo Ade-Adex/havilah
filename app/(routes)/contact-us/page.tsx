@@ -55,7 +55,7 @@ const ContactUaPage = () => {
         </p>
       </div>
 
-      <div className="mt-24 mb-12">
+      <div className="mt-8 mb-4 lg:mt-24 lg:mb-12">
         <Heading text="Get in touch" text2="With Us" />
         <Line ClassName="justify-center" />
       </div>
