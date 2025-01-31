@@ -37,7 +37,7 @@ const WelcomeSection = () => {
           />
         </div>
 
-        <div className="lg:w-1/2 px-8 py-10 bg-white shadow-lg rounded-tr-lg rounded-br-lg lg:ml-[-20px] z-40">
+        <div className="lg:w-1/2 px-8 py-10 bg-white border shadow-lg rounded-tr-lg rounded-br-lg lg:ml-[-20px] z-40">
           <SectionTitle text="About Us" />
           <SectionSubTitle text="The Most Preferred Location" />
           <SectionContent
