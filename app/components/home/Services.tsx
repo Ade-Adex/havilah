@@ -20,7 +20,7 @@ const Services = () => {
   </div>
 
   <div className="w-full flex justify-center">
-    <div className="w-full flex justify-center gap-2">
+    <div className="w-full flex ml-[15%] md:ml-[unset] md:justify-center gap-2">
       <div className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12">
         <Image src={floor} alt="1K Capacity" />
       </div>
