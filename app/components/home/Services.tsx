@@ -42,7 +42,7 @@ const Services = () => {
   </div>
 </div>
 
-      <button className="flex mx-auto mt-12 md:mt-9 text-[12px] lg:text-[14px] leading-[21px] uppercase font-[600] font-robotoSlab text-white bg-havilah-whiskey p-3 rounded-sm">
+      <button className="flex mx-auto mt-12 md:mt-9 text-[12px] lg:text-[14px] leading-[21px] uppercase font-[600] font-robotoSlab text-white bg-havilah-whiskey py-2 px-3 lg:p-3 rounded-sm">
         CHECK AVAILABILITY
       </button>
     </div>
