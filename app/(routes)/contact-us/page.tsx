@@ -34,13 +34,13 @@ const ContactUaPage = () => {
     <main className="">
       <PagesHero bgImage={ContactBg} pageTitle={formattedPathname} />
       <div className="font-robotoSlab text-[12px] md:text-[14px] font-[300] leading-[18.46px] tracking-[-5%] text-center mt-8 lg:mt-24 ">
-        <h3 className="text-[14px] md:text-[16px] font-[600] md:leading-[21.1px] mb-6">VENUE INFO</h3>
+        <h3 className="text-[14px] md:text-[16px] font-[600] md:leading-[21.1px] mb-3 lg:mb-6">VENUE INFO</h3>
         <span className="">Beside Adeyi Filling Station</span>
         <p>Orogun Area, Iresa Road</p>
         <p>Ogbomoso, Oyo State</p>
       </div>
       <div className="font-robotoSlab text-[12px] md:text-[14px] font-[300] leading-[18.46px] tracking-[-5%] text-center mt-6">
-        <h3 className="text-[14px] md:text-[16px] font-[600] md:leading-[21.1px] mb-6">CONTACT US</h3>
+        <h3 className="text-[14px] md:text-[16px] font-[600] md:leading-[21.1px] mb-3 lg:mb-6">CONTACT US</h3>
         <span>
           Telephone:{" "}
           <a href="tel:+2348033734820" className="hover:underline">
