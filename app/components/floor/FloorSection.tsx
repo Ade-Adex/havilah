@@ -9,7 +9,7 @@ const FloorSection = () => {
     <div className="py-8 px-4 md:px-12 lg:px-16 xl:px-24">
       <Heading text="Floor" className="" />
       <Line ClassName="justify-center" />
-      <div className="relative w-full h-full pt-16 md:pt-24">
+      <div className="relative w-full h-full pt-8 lg:pt-24">
         {" "}
         {/* Aspect Ratio Container */}
         <Image src={floorImage} alt="stage" className="object-cover w-full" priority />
