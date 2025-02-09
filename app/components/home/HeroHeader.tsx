@@ -78,7 +78,7 @@ const HeroHeader = () => {
         autoplaySpeed={5000}
         nextArrow={<NextArrow onClick={() => {}} />}
         prevArrow={<PrevArrow onClick={() => {}} />}
-        className="w-full h-full"
+        className="w-full h-full overflow-hidden"
         afterChange={handleAfterChange}
         // beforeChange={(_, newIndex) => handleBeforeChange(newIndex)}
       >
@@ -89,14 +89,16 @@ const HeroHeader = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
-            className="w-full h-[85vh] md:h-full"
+            className="w-full h-full overflow-hidden "
           >
             <Image
               src={image}
               alt={`hero ${index}`}
-              className="w-full h-full object-cover object-center"
+              className="w-full md:h-screen"
               priority
               sizes="100vw"
+              style={{ objectFit: "fill", objectPosition: "center" }}
+              placeholder = 'blur'
             />
           </motion.div>
         ))}
