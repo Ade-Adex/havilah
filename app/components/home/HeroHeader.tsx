@@ -94,7 +94,7 @@ const HeroHeader = () => {
             <Image
               src={image}
               alt={`hero ${index}`}
-              className="w-full md:h-screen"
+              className="w-full h-[50%] md:h-screen"
               priority
               sizes="100vw"
               style={{ objectFit: "fill", objectPosition: "center" }}
