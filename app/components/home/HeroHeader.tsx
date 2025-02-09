@@ -96,8 +96,9 @@ const HeroHeader = () => {
               alt={`hero ${index}`}
               className="w-full h-[50%] md:h-screen"
               priority
+              height={500}
               sizes="100vw"
-              style={{ objectFit: "fill", objectPosition: "center" }}
+              style={{ objectFit: "fill", objectPosition: "center"}}
               placeholder = 'blur'
             />
           </motion.div>

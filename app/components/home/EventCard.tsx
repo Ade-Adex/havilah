@@ -36,6 +36,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
           fill
           className="object-cover"
           priority
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
 
