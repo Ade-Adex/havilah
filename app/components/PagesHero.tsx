@@ -18,7 +18,7 @@ const PagesHero: React.FC<PagesHeroProps> = ({ bgImage, pageTitle }) => {
         alt="About Hero"
         style={{ objectFit: "fill", objectPosition: "center" }}
         priority
-        className="z-[-1] h-full" // Optional: If you need other elements to overlay
+        className="z-[-1] w-full h-full" // Optional: If you need other elements to overlay
       />
       {/* Text overlay or additional content */}
       <div className="absolute top-[50%] lg:top-[50%] left-[10%] flex flex-col gap-5 text-white text-[14px] md:text-[18px] font-[500] font-robotoSlab">

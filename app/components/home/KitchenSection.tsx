@@ -45,7 +45,7 @@ const KitchenSection = () => {
           <Image
             src={kitchenImage}
             alt="Havilah Kitchen"
-            className="rounded-lg shadow-lg"
+            className="md:w-full md:h-auto  rounded-lg shadow-lg"
             priority
           />
         </div>

@@ -32,7 +32,7 @@ const WelcomeSection = () => {
           <Image
             src={welcomeImage}
             alt="Welcome to Havilah Events Place"
-            className="rounded-lg shadow-lg"
+            className="md:w-full md:h-auto rounded-lg shadow-lg"
             priority
           />
         </div>
