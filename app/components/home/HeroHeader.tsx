@@ -94,10 +94,10 @@ const HeroHeader = () => {
             <Image
               src={image}
               alt={`hero ${index}`}
-              className="w-full h-[50%] md:h-screen"
+              className="w-full h-[50vh] md:h-screen"
               priority
               height={500}
-              sizes="100vw"
+              sizes="(max-width: 768px) 50vw, 100vw"
               style={{ objectFit: "fill", objectPosition: "center"}}
               placeholder = 'blur'
             />
