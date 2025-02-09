@@ -183,21 +183,6 @@
 
 // export default GalleryPage;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -223,7 +208,7 @@ const GalleryPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedMedia, setSelectedMedia] = useState<MediaProps | null>(null);
 
-  console.log("selected",selectedMedia);
+  console.log("selected", selectedMedia);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -362,10 +347,12 @@ const AnimatedImage = ({
         src={image}
         alt={alt}
         priority
-        layout="responsive"
-        width={200}
-        height={200}
+        width={200} // intrinsic width
+        height={200} // intrinsic height
+        style={{ width: "100%", height: "auto" }}
         className="object-cover"
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWP4//8/AwAI/AL+NNgAAAABJRU5ErkJggg=="
       />
       {/* <p className="absolute bottom-4 left-4 text-white">{description}</p> */}
     </div>

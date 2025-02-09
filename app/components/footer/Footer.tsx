@@ -78,6 +78,7 @@ const Footer = () => {
                     alt="Footer background"
                     fill
                     className="object-cover opacity-50"
+                    sizes="(max-width: 768px) 100vw, 56vw"
                   />
                 </div>
                 <h2 className="text-lg font-semibold mb-5 text-center font-robotoSlab leading-[26px] tracking-[5px]">

@@ -13,7 +13,9 @@ const Line: React.FC<LineProps> = ({ ClassName }) => {
         src={lineImage}
         alt="decorative line"
         priority
-        className="w-36 md:w-52 lg:w-64 h-auto"
+        width={300} // example intrinsic width
+        height={100} // example intrinsic height
+        className="w-36 md:w-52 lg:w-64"
       />
     </div>
   );
