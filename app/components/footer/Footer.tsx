@@ -71,8 +71,9 @@ const Footer = () => {
             {/* Newsletter Section */}
             <div className="mb-10 lg:mb-0 lg:w-1/3 flex flex-col items-center">
               <Image src={logo} alt="Logo" className="h-20 w-20 mb-6" />
-              <div className="rounded-lg bg-havilah-footer pt-5 pb-16 px-4 relative hidden md:flex">
-                <div className="hidden md:block absolute top-0 left-0 md:w-[56%] h-full">
+              <div className="rounded-lg bg-havilah-footer pt-5 pb-16 px-4 relative hidden md:flex flex-col">
+                {/* Background Image */}
+                <div className="hidden md:block absolute top-0 left-0 md:w-[56%] h-full z-0">
                   <Image
                     src={newsletterBgImage}
                     alt="Footer background"
@@ -81,28 +82,31 @@ const Footer = () => {
                     sizes="(max-width: 768px) 100vw, 56vw"
                   />
                 </div>
-                <h2 className="text-lg font-semibold mb-5 text-center font-robotoSlab leading-[26px] tracking-[5px]">
-                  Newsletter
-                </h2>
-                <form className="w-full max-w-sm mt-12 ">
-                  <div className="flex">
-                    <input
-                      type="email"
-                      placeholder="Your email address"
-                      className="flex-1 px-4 py-2 rounded-l-md text-black"
-                    />
-                    <button
-                      type="submit"
-                      className="px-4 py-2 bg-havilah-deep-cove text-white rounded-r-md"
-                    >
-                      Subscribe
-                    </button>
-                  </div>
-                  <p className="text-sm text-gray-400 mt-2">
-                    * We will keep you informed with all relevant updates and
-                    important information.
-                  </p>
-                </form>
+                {/* Content container with higher z-index */}
+                <div className="relative z-10">
+                  <h2 className="text-lg font-semibold mb-5 text-center font-robotoSlab leading-[26px] tracking-[5px]">
+                    Newsletter
+                  </h2>
+                  <form className="w-full max-w-sm mt-8">
+                    <div className="flex">
+                      <input
+                        type="email"
+                        placeholder="Your email address"
+                        className="flex-1 px-4 py-2 rounded-l-md text-black"
+                      />
+                      <button
+                        type="submit"
+                        className="px-4 py-2 bg-havilah-deep-cove text-white rounded-r-md"
+                      >
+                        Subscribe
+                      </button>
+                    </div>
+                    <p className="text-sm text-gray-400 mt-2">
+                      * We will keep you informed with all relevant updates and
+                      important information.
+                    </p>
+                  </form>
+                </div>
               </div>
             </div>
 
