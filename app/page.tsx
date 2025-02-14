@@ -1,7 +1,7 @@
 // /app/page.tsx
 
 import SEO_METADATA from "./utils/metadataConfig";
-import HeroHeader from "./components/home/HeroHeader";
+import HeroHeader from "./components/home/hero/HeroHeader";
 import WelcomeSection from "./components/home/WelcomeSection";
 import { Metadata } from "next";
 import KitchenSection from "./components/home/KitchenSection";
