@@ -27,7 +27,7 @@ const MediaModal = ({ media, closeModal }: MediaModalProps) => {
       className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50"
       onClick={closeModal}
     >
-      <div className="relative max-w-4xl max-h-[80vh] p-4 bg-white rounded-lg overflow-hidden">
+      <div className="relative max-w-4xl max-h-[80vh] p-0 bg-white rounded-lg overflow-hidden">
         <button
           onClick={closeModal}
           className="absolute top-2 right-2 bg-red-600 text-white p-2 rounded-full z-10"
@@ -56,7 +56,7 @@ const MediaModal = ({ media, closeModal }: MediaModalProps) => {
             />
           </div>
         )}
-        <p className="mt-4 text-[14px] md:text-[16px]">{media.description}</p>
+        <p className="mt-4 text-[14px] md:text-[16px] text-center">{media.description}</p>
       </div>
     </div>
   );

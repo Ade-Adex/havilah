@@ -35,7 +35,8 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
           alt={title}
           fill
           className="object-cover"
-          priority
+          // priority
+          loading="lazy"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>

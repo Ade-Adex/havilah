@@ -27,17 +27,19 @@ const WelcomeSection = () => {
         className="flex flex-col md:flex-row justify-center"
       />
       <Line ClassName="justify-center"/>
-      <section className="flex flex-col lg:flex-row gap-y-4 lg:gap-y-0 items-center mt-16">
-        <div className="lg:w-1/2">
+      <section className="flex flex-col lg:flex-row  gap-y-4 lg:gap-y-0 items-center mt-16">
+        <div className="w-full lg:w-1/2 h-full relative">
           <Image
             src={welcomeImage}
             alt="Welcome to Havilah Events Place"
-            className="md:w-full md:h-auto rounded-lg shadow-lg"
+            className="md:w-full h-full rounded-lg shadow-lg "
             priority
+            // fill
+            // sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </div>
 
-        <div className="lg:w-1/2 px-8 py-10 bg-white border shadow-lg rounded-lg lg:rounded-tr-lg lg:rounded-br-lg lg:rounded-none lg:ml-[-20px] z-40">
+        <div className="content lg:w-1/2 px-8 py-10 bg-white border shadow-lg rounded-lg lg:rounded-tr-lg lg:rounded-br-lg lg:rounded-none lg:ml-[-20px] z-40">
           <SectionTitle text="About Us" />
           <SectionSubTitle text="The Most Preferred Location" />
           <SectionContent

@@ -5,16 +5,18 @@ import Heading from "../Heading";
 import client from "@/public/images/client.png";
 
 const CeoMessageSection = () => (
-  <div className="mx-auto xl:max-w-[1099px] grid grid-cols-1 md:grid-cols-2 items-center mt-16 gap-7 px-4 md:px-12 lg:px-16 xl:px-[unset]">
-  <div className="w-full relative">
+  <div className="mx-auto xl:max-w-[1099px] grid grid-cols-1 lg:grid-cols-2 items-center mt-16 gap-7 px-4 md:px-12 lg:px-16 xl:px-[unset]">
+  <div className="w-full relative flex items-center justify-center">
     <Image
       src={client}
       alt="Havilah CEO"
       priority
-      className="object-cover"
+      // fill
+      // sizes="(max-width: 1024px) 100vw, 50vw"
+      className="lg:w-full "
     />
   </div>
-  <div>
+  <div className="h-full flex flex-col justify-center">
     <Heading
       text="WORD FROM "
       text2="OUR CEO"

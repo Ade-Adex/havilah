@@ -41,11 +41,11 @@ const KitchenSection = () => {
           />
           <SectionButton text="BOOK US" />
         </div>
-        <div className="lg:w-1/2 lg:ml-[-20px]">
+        <div className="w-full lg:w-1/2 lg:ml-[-20px]">
           <Image
             src={kitchenImage}
             alt="Havilah Kitchen"
-            className="md:w-full md:h-auto  rounded-lg shadow-lg"
+            className="md:w-full h-full rounded-lg shadow-lg"
             priority
           />
         </div>
