@@ -170,7 +170,6 @@ const AnimatedImage = ({
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWP4//8/AwAI/AL+NNgAAAABJRU5ErkJggg=="
         loading="lazy"
       />
-      {/* <p className="absolute bottom-4 left-4 text-white">{description}</p> */}
     </div>
   );
 };
