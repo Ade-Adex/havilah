@@ -7,9 +7,9 @@ import image6 from "@/public/images/event6.png";
 import image7 from "@/public/images/event2.png";
 import image8 from "@/public/images/event4.png";
 import image9 from "@/public/images/event5.png";
-import { Event } from "../types/event/event";
+import { EventData } from "../types/event/event";
 
-export const events: Event[] = [
+export const events: EventData[] = [
   {
     title: "ADEKEMI 2024",
     type: "Wedding",

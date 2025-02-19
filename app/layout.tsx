@@ -22,7 +22,7 @@ export default function RootLayout({
         className={`${robotoSlab.variable} ${montserrat.variable} antialiased`}
       >
         <MantineProvider>
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
           <Footer />
         </MantineProvider>

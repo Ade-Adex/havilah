@@ -1,14 +1,31 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Heading from "../Heading";
 import Line from "../Line";
-import { events } from "@/app/data/eventdata";
 import EventCard from "./EventCard";
 import Rectangle from "@/public/images/Rectangle.png";
 import Image from "next/image";
+import { getEventsData } from "@/app/cache/useUpcomingEventCache";
+import { Event } from "@/app/types/event/event";
 const EventSection = () => {
-  const [showAll, setShowAll] = useState(false); // State to toggle between limited and full list
+  const [events, setEvents] = useState<Event[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [showAll, setShowAll] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getEventsData();
+        setEvents(data);
+      } catch (error) {
+        console.error("Error fetching event data:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
 
   const handleViewAll = () => {
     setShowAll(!showAll);
@@ -24,11 +41,20 @@ const EventSection = () => {
         className="absolute top-8 md:top-8 left-0 md:left-24 z-0"
         priority
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] mt-16">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] mt-16">
         {(showAll ? events : events.slice(0, 6)).map((event, index) => (
           <EventCard key={index} event={event} />
         ))}
-      </div>
+      </div> */}
+      {isLoading ? (
+        <p className="text-center text-gray-500">Loading events...</p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] mt-16">
+          {(showAll ? events : events.slice(0, 6)).map((event, index) => (
+            <EventCard key={index} event={event} />
+          ))}
+        </div>
+      )}
       <button
         onClick={handleViewAll}
         className="flex mx-auto my-[73px] text-[10px] md:text-[12px] md:leading-[15.83px] uppercase font-[500] font-robotoSlab text-white bg-havilah-deep-cove p-3 rounded-sm"

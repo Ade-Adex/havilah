@@ -13,9 +13,9 @@ export const gallerySchema: SchemaTypeDefinition = {
       type: 'string',
       options: {
         list: [
-          { title: 'Event', value: 'event' },
+          { title: 'Events', value: 'events' },
           { title: 'Hall', value: 'hall' },
-          { title: 'Video', value: 'video' },
+          { title: 'Videos', value: 'videos' },
         ],
         layout: 'radio',
       },

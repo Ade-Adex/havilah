@@ -1,10 +1,9 @@
-'use client'
-
+"use client";
 
 import React from "react";
 import Image from "next/image";
 import completed from "@/public/images/complete.png";
-import loading from "@/public/images/Loading.png";
+import pending from "@/public/images/Loading.png";
 import useInView from "@/app/hooks/useInView";
 import { Event } from "@/app/types/event/event";
 import OngoingIcon from "./OngoingIcon";
@@ -71,7 +70,15 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
                 d="M8 7V3m8 4V3m-6 4h6m-6 0H5a2 2 0 00-2 2v11a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-6 0H5m6 0v11"
               />
             </svg>
-            {date}
+            {new Date(date).toLocaleString("en-US", {
+              weekday: "short", // e.g., "Thu"
+              month: "short", // e.g., "Jul"
+              day: "2-digit", // e.g., "25"
+              year: "numeric", // e.g., "2024"
+              hour: "2-digit", // e.g., "03"
+              minute: "2-digit", // e.g., "30"
+              hour12: true, // 12-hour format with AM/PM
+            })}
           </div>
         </div>
 
@@ -84,7 +91,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
             className={`text-[10px] md:text-[12px] font-semibold flex items-center text-havilah-deep-cove`}
           >
             {status === "Pending" && (
-              <Image src={loading} alt="Pending" className="h-5 w-5 mr-2" />
+              <Image src={pending} alt="Pending" className="h-5 w-5 mr-2" />
             )}
             {status === "Completed" && (
               <Image src={completed} alt="Completed" className="h-5 w-5 mr-2" />
@@ -95,7 +102,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
             {status === "Upcoming" && (
               <UpcomingIcon className="h-5 w-5 mr-2 text-havilah-deep-cove" />
             )}
-            <span className="ml-2">{status}</span>
+            <span className="ml-2 capitalize">{status}</span>
           </span>
         </div>
       </div>

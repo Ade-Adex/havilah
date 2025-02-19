@@ -1,11 +1,24 @@
 // types/event.ts
 
 import type { StaticImageData } from "next/image";
+import { Media } from "../gallery";
 
 export type Event = {
   title: string;
   type: string; // e.g., "Wedding", "Conference", etc.
-  date: string; // ISO format or human-readable date
+  date: string; // ✅ ISO format with time (YYYY-MM-DDTHH:mm:ss.sssZ)
+  description: string;
+  status: "Pending" | "Completed" | "Ongoing" | "Upcoming";
+  imageUrl: string;
+  // imageUrl: string | StaticImageData; // Allow both string and StaticImageData
+};
+
+
+
+export type EventData = {
+  title: string;
+  type: string; // e.g., "Wedding", "Conference", etc.
+  date: string; // ✅ ISO format with time (YYYY-MM-DDTHH:mm:ss.sssZ)
   description: string;
   status: "Pending" | "Completed" | "Ongoing" | "Upcoming";
   imageUrl: string | StaticImageData; // Allow both string and StaticImageData

@@ -18,12 +18,12 @@ import MediaModal, { MediaProps } from "./MediaModal";
 const GalleryPage = () => {
   const pathname = usePathname();
   const formattedPathname = pathname.replace("/", "").toUpperCase();
-  const [selectedCategory, setSelectedCategory] = useState("event");
+  const [selectedCategory, setSelectedCategory] = useState("events");
   const [galleryImages, setGalleryImages] = useState<Gallery[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedMedia, setSelectedMedia] = useState<MediaProps | null>(null);
 
-  console.log("selected", selectedMedia);
+  // console.log("selected", selectedMedia);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,6 +43,11 @@ const GalleryPage = () => {
     setSelectedMedia(media);
   };
 
+  const categoryOrder = ["events", "hall", "videos"];
+const sortedGalleryImages = galleryImages.sort(
+  (a, b) => categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category)
+);
+
   return (
     <main>
       <PagesHero bgImage={galleryBg} pageTitle={formattedPathname} />
@@ -56,11 +61,26 @@ const GalleryPage = () => {
 
         {/* Category buttons */}
         <div className="flex gap-4 mb-8 justify-center mt-8">
+  {sortedGalleryImages.map((category, index) => (
+    <button
+      key={index}
+      onClick={() => setSelectedCategory(category.category)}
+      className={`px-4 py-2 text-[14px] md:text-[16px] font-[500] uppercase font-robotoSlab md:leading-[21.1px] ${
+        selectedCategory === category.category
+          ? "text-havilah-whiskey underline"
+          : "text-havilah-deep-cove"
+      }`}
+    >
+      {category.category}
+    </button>
+  ))}
+</div>
+        {/* <div className="flex gap-4 mb-8 justify-center mt-8">
           {galleryImages.map((category, index) => (
             <button
               key={index}
               onClick={() => setSelectedCategory(category.category)}
-              className={`px-4 py-2 text-[14px] md:text-[16px] font-[500] capitalize font-robotoSlab leading-[21.1px] ${
+              className={`px-4 py-2 text-[14px] md:text-[16px] font-[500] uppercase font-robotoSlab md:leading-[21.1px] ${
                 selectedCategory === category.category
                   ? "text-havilah-whiskey underline"
                   : "text-havilah-deep-cove"
@@ -69,7 +89,7 @@ const GalleryPage = () => {
               {category.category}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Display media or skeleton for the selected category */}
         {isLoading ? (
