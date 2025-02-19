@@ -6,7 +6,7 @@ import notfoundImage from "@/public/images/6167023.webp";
 const NotFound = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black">
-      <div className="text-center">
+      <div className="text-center px-4">
         <div className="mt-8">
           <Image
             src={notfoundImage}
