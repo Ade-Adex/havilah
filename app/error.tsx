@@ -6,7 +6,7 @@ import Link from "next/link";
 const ErrorPage = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white">
-      <div className="text-center px-4">
+      <div className="text-center px-4 mt-4">
         <h1 className="text-6xl font-bold text-red-500">Oops!</h1>
         <h2 className="mt-4 text-3xl font-semibold">Something Went Wrong</h2>
         <p className="mt-2 text-lg text-gray-400">
@@ -17,7 +17,7 @@ const ErrorPage = () => {
         <div className="mt-6">
           <Link
             href="/"
-            className="px-6 py-3 bg-blue-600 text-white font-medium text-lg rounded-lg shadow-lg hover:bg-blue-500 transition duration-300"
+            className="px-6 py-3 bg-havilah-deep-cove text-white font-medium text-lg rounded-lg shadow-lg hover:bg-havilah-light-deep-cove transition duration-300"
           >
             Go Back to Home
           </Link>
