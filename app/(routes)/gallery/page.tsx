@@ -44,9 +44,10 @@ const GalleryPage = () => {
   };
 
   const categoryOrder = ["events", "hall", "videos"];
-const sortedGalleryImages = galleryImages.sort(
-  (a, b) => categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category)
-);
+  const sortedGalleryImages = galleryImages.sort(
+    (a, b) =>
+      categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category)
+  );
 
   return (
     <main>
@@ -61,22 +62,7 @@ const sortedGalleryImages = galleryImages.sort(
 
         {/* Category buttons */}
         <div className="flex gap-4 mb-8 justify-center mt-8">
-  {sortedGalleryImages.map((category, index) => (
-    <button
-      key={index}
-      onClick={() => setSelectedCategory(category.category)}
-      className={`px-4 py-2 text-[14px] md:text-[16px] font-[500] uppercase font-robotoSlab md:leading-[21.1px] ${
-        selectedCategory === category.category
-          ? "text-havilah-whiskey underline"
-          : "text-havilah-deep-cove"
-      }`}
-    >
-      {category.category}
-    </button>
-  ))}
-</div>
-        {/* <div className="flex gap-4 mb-8 justify-center mt-8">
-          {galleryImages.map((category, index) => (
+          {sortedGalleryImages.map((category, index) => (
             <button
               key={index}
               onClick={() => setSelectedCategory(category.category)}
@@ -89,7 +75,7 @@ const sortedGalleryImages = galleryImages.sort(
               {category.category}
             </button>
           ))}
-        </div> */}
+        </div>
 
         {/* Display media or skeleton for the selected category */}
         {isLoading ? (
