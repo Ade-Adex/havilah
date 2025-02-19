@@ -1,7 +1,6 @@
 // types/event.ts
 
 import type { StaticImageData } from "next/image";
-import { Media } from "../gallery";
 
 export type Event = {
   title: string;
