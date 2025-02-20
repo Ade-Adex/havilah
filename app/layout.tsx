@@ -2,9 +2,7 @@
 
 import { robotoSlab, montserrat } from "@/app/fonts/fonts";
 import "./globals.css";
-import Navbar from "./components/navbar/Navbar";
 import { MantineProvider } from "@mantine/core";
-import Footer from "./components/footer/Footer";
 import LayoutWrapper from "./components/LayoutWrapper";
 
 export default function RootLayout({
@@ -23,9 +21,6 @@ export default function RootLayout({
         className={`${robotoSlab.variable} ${montserrat.variable} antialiased`}
       >
         <MantineProvider>
-          {/* <Navbar />
-          {children}
-          <Footer /> */}
           <LayoutWrapper>{children}</LayoutWrapper>
         </MantineProvider>
       </body>
