@@ -32,27 +32,34 @@ const EventSection = () => {
   };
 
   return (
-    <div id="events" className="px-4 md:px-12 lg:px-16 xl:px-24 relative scroll-mt-[100px]">
+    <div
+      id="events"
+      className="px-4 md:px-12 lg:px-16 xl:px-24 relative scroll-mt-[100px]"
+    >
       <Heading text="Event " text2="Images" className="flex justify-center" />
-      <Line ClassName="justify-center"/>
+      <Line ClassName="justify-center" />
       <Image
         src={Rectangle}
         alt="Overlay"
         className="absolute top-8 md:top-8 left-0 md:left-24 z-0"
         priority
       />
-      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] mt-16">
-        {(showAll ? events : events.slice(0, 6)).map((event, index) => (
-          <EventCard key={index} event={event} />
-        ))}
-      </div> */}
+
       {isLoading ? (
         <p className="text-center text-gray-500">Loading events...</p>
       ) : (
+        // <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] mt-16">
+        //   {(showAll ? events : events.slice(0, 6)).map((event, index) => (
+        //     <EventCard key={index} event={event} />
+        //   ))}
+        // </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] mt-16">
-          {(showAll ? events : events.slice(0, 6)).map((event, index) => (
-            <EventCard key={index} event={event} />
-          ))}
+          {(showAll ? events : events.slice(0, 6))
+            .slice() // clone array
+            .reverse()
+            .map((event, index) => (
+              <EventCard key={index} event={event} />
+            ))}
         </div>
       )}
       <button
@@ -66,11 +73,6 @@ const EventSection = () => {
 };
 
 export default EventSection;
-
-
-
-
-
 
 // "use client";
 

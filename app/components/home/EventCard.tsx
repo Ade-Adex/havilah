@@ -23,17 +23,17 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
   return (
     <div
       ref={ref}
-      className={`bg-white shadow-lg rounded-md overflow-hidden flex flex-col transform transition duration-700 ease-out ${
+      className={`bg-white shadow-lg rounded-md overflow-hidden flex flex-col transform transition duration-700 ease-out group ${
         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
       {/* Image */}
-      <div className="relative h-[200px] md:h-[292px] w-full">
+      <div className="relative h-[200px] md:h-[292px] w-full overflow-hidden">
         <Image
           src={imageUrl}
           alt={title}
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           // priority
           loading="lazy"
           sizes="(max-width: 768px) 100vw, 50vw"
