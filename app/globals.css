@@ -27,7 +27,16 @@ html {
 }
 
 
+input:-webkit-autofill, input:-webkit-autofill:focus {
+  background-color: #4b5563 !important;
+  color: #ffffff !important;
+  transition: background-color 1000s ease-in-out 0s, color 1000s ease-in-out 0s;
+}
 
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
 
 /* CSS code for the theme shift or toggle on the navbar */
 .toggle {

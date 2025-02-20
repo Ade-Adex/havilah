@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React from "react";
 import Heading from "../Heading";
@@ -10,12 +10,13 @@ import SectionSubTitle from "./SectionSubTitle";
 import SectionContent from "./SectionContent";
 import SectionButton from "./SectionButton";
 import useInView from "@/app/hooks/useInView";
-import triangle from "@/public/images/triangle.png"
+import triangle from "@/public/images/triangle.png";
 
 const KitchenSection = () => {
   const { ref, isInView } = useInView(0.2);
   return (
     <div
+      id="kitchen"
       ref={ref}
       className={`py-8 px-4 md:px-12 lg:px-16 xl:px-24 transform transition duration-700 ease-out ${
         isInView ? "opacity-100 scale-100" : "opacity-0 scale-95"
@@ -29,7 +30,11 @@ const KitchenSection = () => {
           className="object-cover opacity-80"
         />
       </div>
-      <Heading text="Havilah " text2="Kitchen" className="flex justify-center" />
+      <Heading
+        text="Havilah "
+        text2="Kitchen"
+        className="flex justify-center"
+      />
       <Line ClassName="justify-center" />
       <section className="flex flex-col lg:flex-row  gap-y-4 lg:gap-y-0 items-center md:mt-16">
         <div className="lg:w-1/2 px-8 py-10 bg-white border shadow-lg rounded-lg lg:rounded-tl-lg lg:rounded-bl-lg lg:rounded-none z-40">
