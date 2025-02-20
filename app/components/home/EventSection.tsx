@@ -33,7 +33,7 @@ const EventSection = () => {
 
   return (
     <div className="px-4 md:px-12 lg:px-16 xl:px-24 relative">
-      <Heading text="Upcoming " text2="Events" className="flex justify-center" />
+      <Heading text="Event " text2="Images" className="flex justify-center" />
       <Line ClassName="justify-center"/>
       <Image
         src={Rectangle}
