@@ -18,7 +18,7 @@ const KitchenSection = () => {
     <div
       id="kitchen"
       ref={ref}
-      className={`py-8 px-4 md:px-12 lg:px-16 xl:px-24 transform transition duration-700 ease-out ${
+      className={`py-8 px-4 md:px-12 lg:px-16 xl:px-24 transform transition duration-700 ease-out scroll-mt-[100px] ${
         isInView ? "opacity-100 scale-100" : "opacity-0 scale-95"
       }`}
     >

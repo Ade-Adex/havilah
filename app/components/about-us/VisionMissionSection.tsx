@@ -2,7 +2,7 @@ import React from "react";
 import VisionMissionCard from "./VisionMissionCard";
 
 const VisionMissionSection = () => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0">
+  <div id="vision-mission" className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 scroll-mt-[100px]">
     <VisionMissionCard
       title="OUR VISION"
       text="To be the premier destination for all events, known for our exceptional spaces, innovative services, and the ability to make every occasion truly memorable."
