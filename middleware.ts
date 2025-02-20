@@ -7,29 +7,48 @@ export function middleware(request: NextRequest) {
   
   // Only protect the CMS (studio) routes
   if (pathname.startsWith('/studio')) {
-    // Retrieve the Basic Auth header
     const basicAuth = request.headers.get('authorization');
-    
-  // Use the NEXT_PUBLIC environment variables as defined in your .env file
-  const expectedUser = process.env.NEXT_PUBLIC_CMS_USER;
-  const expectedPass = process.env.NEXT_PUBLIC_CMS_PASS;
+    const expectedUser = process.env.NEXT_PUBLIC_CMS_USER;
+    const expectedPass = process.env.NEXT_PUBLIC_CMS_PASS;
 
     if (!expectedUser || !expectedPass) {
-      // Optionally allow access or block if credentials aren't set
       return NextResponse.next();
     }
 
-    // Build the expected Authorization header value
     const expectedAuth =
-      'Basic ' +
-      Buffer.from(`${expectedUser}:${expectedPass}`).toString('base64');
+      'Basic ' + Buffer.from(`${expectedUser}:${expectedPass}`).toString('base64');
 
-    // If the header doesn't match, respond with a 401 and a Basic Auth challenge
     if (basicAuth !== expectedAuth) {
-      return new NextResponse('Authentication required', {
+      const unauthorizedHtml = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Authentication Required</title>
+  <!-- Include Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="min-h-screen flex items-center justify-center flex-col">
+    <div class="bg-white p-6 rounded shadow max-w-sm text-center">
+      <h1 class="text-2xl font-semibold mb-4 text-red-600">Access Denied</h1>
+      <p class="text-gray-700">
+        You must provide valid credentials to access this area. If you believe this is an error, 
+        please contact your administrator.
+      </p>
+      <a href="/" class="mt-6 inline-block bg-[#333362] hover:bg-[#0F0F46] text-white font-bold py-2 px-4 rounded">
+        Return Home
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+      `;
+      return new NextResponse(unauthorizedHtml, {
         status: 401,
         headers: {
           'WWW-Authenticate': 'Basic realm="Protected CMS Area"',
+          'Content-Type': 'text/html; charset=utf-8',
         },
       });
     }
