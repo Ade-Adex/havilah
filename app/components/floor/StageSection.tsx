@@ -6,7 +6,7 @@ import stageImage from "@/public/images/balkon.png";
 
 const StageSection = () => {
   return (
-    <div className="py-8 px-4 md:px-12 lg:px-16 xl:px-24">
+    <div className="py-8 px-4 md:px-12 lg:px-16 xl:px-24 4xl:pt-72">
       <Heading text="Stage" className="" />
       <Line ClassName="justify-center" />
       <div className="relative w-full h-0 pb-[8%] lg:pb-[26.25%] pt-8 lg:pt-24"> {/* Aspect Ratio Container */}

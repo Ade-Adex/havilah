@@ -11,7 +11,7 @@ const LogoSection = () => (
       width={72}
       height={72}
       priority
-      className="rounded-md w-12 h-12 md:w-16 md:h-16"
+      className="rounded-md w-12 h-12 lg:w-16 lg:h-16"
     />
   </Link>
 );

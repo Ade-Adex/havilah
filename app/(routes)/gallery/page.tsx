@@ -52,7 +52,7 @@ const GalleryPage = () => {
   return (
     <main>
       <PagesHero bgImage={galleryBg} pageTitle={formattedPathname} />
-      <div className="py-[75px] px-4 md:px-12 lg:px-16 xl:px-24">
+      <div className="py-[75px] px-4 md:px-12 lg:px-16 xl:px-24 4xl:pt-72">
         <Heading
           text="Take a glimpse of our stunning"
           text2="hall and its exceptional features"

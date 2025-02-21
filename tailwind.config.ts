@@ -14,9 +14,10 @@ export default {
         sm: "640px", // Small screens (default)
         md: "768px", // Medium screens (default)
         lg: "1024px", // Large screens (default)
-        xl: "1280px", // Extra large screens (default)
+        xl: "1440px", // Extra large screens (default)
         "2xl": "1536px", // 2X extra large screens (default)
         "3xl": "1920px", // Custom 3X extra large
+        "4xl": "2560px", // Custom 4X extra large
       },
       colors: {
         white: '#FFFFFF',

@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`top-0 left-0 w-full z-50 shadow-lg border-b border-gray-400 dark:border-gray-600 h-20 md:h-28 ${
+      className={`top-0 left-0 w-full z-50 shadow-lg border-b border-gray-400 dark:border-gray-600 h-20 lg:h-28 ${
         scrolled ? "fixed bg-[#161A27]" : "absolute "
       }`}
     >

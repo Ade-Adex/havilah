@@ -2,7 +2,7 @@ import React from "react";
 import Line from "../Line";
 
 const IntroductionSection = () => (
-  <div className="px-4 md:px-12 lg:px-16 xl:px-[unset] lg:max-w-[982px] mx-auto pt-12">
+  <div className="px-4 md:px-12 lg:px-16 xl:px-[unset] lg:max-w-[982px] mx-auto pt-12 4xl:pt-72">
     <div className="font-robotoSlab text-[12px] md:text-[16px] font-[400]">
       <Line ClassName="justify-center md:justify-start" />
       <h1 className="text-[28px] lg:text-[50px] xl:text-[64px] font-semibold text-havilah-whiskey inline">

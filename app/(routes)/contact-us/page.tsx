@@ -33,7 +33,7 @@ const ContactUaPage = () => {
   return (
     <main className="">
       <PagesHero bgImage={ContactBg} pageTitle={formattedPathname} />
-      <div className="font-robotoSlab text-[12px] md:text-[14px] font-[300] leading-[18.46px] tracking-[-5%] text-center mt-8 lg:mt-24 ">
+      <div className="font-robotoSlab text-[12px] md:text-[14px] font-[300] leading-[18.46px] tracking-[-5%] text-center mt-8 lg:mt-24 4xl:pt-72">
         <h3 className="text-[14px] md:text-[16px] font-[600] md:leading-[21.1px] mb-3">VENUE INFO</h3>
         <span className="">Beside Adeyi Filling Station</span>
         <p>Orogun Area, Iresa Road</p>
