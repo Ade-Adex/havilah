@@ -29,25 +29,25 @@ const EventSpaceAndLocationSection = () => (
 
         {/* lines below space card */}
 
-        <div className="absolute lg:top-[240px] xl:top-[260px] left-[70%] flex items-center w-[300px] hidden lg:flex">
+        <div className="absolute lg:top-[190px] xl:top-[260px] 4xl:top-[360px] left-[70%] flex items-center w-[300px] 4xl:w-[350px] hidden lg:flex">
           {/* left vertical line */}
-          <div className="lg:h-[50px] xl:h-[70px] w-[2px] bg-[#1C1A47]"></div>
+          <div className="lg:h-[40px] xl:h-[70px] 4xl:h-[100px] w-[2px] bg-[#1C1A47]"></div>
           {/* left top circle */}
           <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute top-[-10%] left-[-5px]"></div>
           {/* bottom circle */}
-          <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute top-[90%] left-[-5px]"></div>
-          <div className="flex-1 h-[2px] bg-[#1C1A47] lg:mt-[17%] xl:mt-[25%]"></div>
+          <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[75%] xl:top-[90%] left-[-5px]"></div>
+          <div className="flex-1 h-[2px] bg-[#1C1A47] lg:mt-[11%] xl:mt-[25%] 4xl:mt-[32%]"></div>
         </div>
       </div>
 
       <div className="relative w-[40%] flex items-center justify-center hidden lg:flex">
         {/* Lines from the centered Image to the Top Right About Card */}
 
-        <div className="absolute top-[-5px] left-[60%] flex items-center w-[300px] ">
+        <div className="absolute top-[-5px] left-[60%] flex items-center w-[240px] xl:w-[300px] 4xl:w-[600px]">
           {/* left vertical line */}
-          <div className="h-[50px]  w-[2px] bg-[#1C1A47] absolute left-[6px] top-[50%]"></div>
+          <div className="h-[40px] xl:h-[50px] 4xl:h-[100px]  w-[2px] bg-[#1C1A47] absolute left-[6px] top-[50%]"></div>
           {/* left bottom circle */}
-          <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] mx-[1px] absolute left-0 top-[450%]"></div>
+          <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] mx-[1px] absolute left-0 top-[300%] xl:top-[450%] 4xl:top-[800%]"></div>
           {/* Left top circle */}
           <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] mx-[1px]"></div>
           {/* Horizontal line */}
@@ -55,16 +55,16 @@ const EventSpaceAndLocationSection = () => (
           {/* Right top circle */}
           <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] mx-[1px]"></div>
           {/* Right vertical line */}
-          <div className="lg:h-[50px] xl:h-[70px] w-[2px] bg-[#1C1A47] absolute right-[6px] top-[50%]"></div>
+          <div className="lg:h-[40px] xl:h-[70px] 4xl:h-[100px] w-[2px] bg-[#1C1A47] absolute right-[6px] top-[50%]"></div>
           {/* Right bottom circle */}
-          <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] mx-[1px] absolute right-[0px] lg:top-[400%] xl:top-[550%]"></div>
+          <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] mx-[1px] absolute right-[0px] lg:top-[330%] xl:top-[550%] 4xl:top-[800%]"></div>
         </div>
 
         {/* Centered Image */}
         <Image
           src={centeredCardImage}
           alt="Centered Event Image"
-          className="object-cover"
+          className="object-cover 4xl:w-[90%]"
           priority
         />
       </div>
@@ -89,17 +89,17 @@ const EventSpaceAndLocationSection = () => (
 
       {/* lines in front of waiter card */}
 
-      <div className="absolute top-[-12%] left-[-15%] flex items-center lg:w-[70px] xl:w-[100px] hidden lg:flex">
+      <div className="absolute top-[-8%] xl:top-[-12%] left-[-15%] flex items-center lg:w-[60px] xl:w-[100px] 4xl:w-[170px] hidden lg:flex">
         {/* left vertical line */}
-        <div className="lg:h-[140px] xl:h-[140px] w-[2px] bg-[#1C1A47]"></div>
+        <div className="lg:h-[100px] xl:h-[140px] 4xl:h-[220px] w-[2px] bg-[#1C1A47]"></div>
         {/* left top circle */}
-        <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[-2%] xl:top-[0%] left-[-5px]"></div>
+        <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[-1%] xl:top-[0%] 4xl:top-[-5%] left-[-5px]"></div>
         {/* left bottom circle */}
-        <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[95%] xl:top-[95%] left-[-5px]"></div>
+        <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[90%] xl:top-[95%] left-[-5px]"></div>
         {/* horizontal line */}
-        <div className="flex-1 h-[2px] bg-[#1C1A47] lg:mt-[200%] xl:mt-[138%]"></div>
+        <div className="flex-1 h-[2px] bg-[#1C1A47] lg:mt-[150%] xl:mt-[138%] 4xl:mt-[130%]"></div>
         {/* horizontal line right circle */}
-        <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[95%] xl:top-[95%] left-[94%]"></div>
+        <div className="w-[12px] h-[12px] rounded-full bg-[#1C1A47] absolute lg:top-[90%] xl:top-[95%] 4xl:top-[96%] left-[94%]"></div>
       </div>
     </div>
   </main>

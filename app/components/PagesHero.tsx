@@ -22,7 +22,7 @@ const PagesHero: React.FC<PagesHeroProps> = ({ bgImage, pageTitle }) => {
       />
       {/* Text overlay or additional content */}
       <div className="absolute top-[50%] lg:top-[50%] left-[10%] flex flex-col gap-3 md:gap-5 text-white text-[14px] md:text-[18px] font-[500] font-robotoSlab">
-        <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold font-robotoSlab capitalize">
+        <h1 className="text-2xl md:text-3xl xl:text-5xl font-bold font-robotoSlab capitalize">
           {pageTitle}
         </h1>
         <div className="flex gap-3">

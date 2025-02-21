@@ -1,5 +1,4 @@
-'use client'
-
+"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -26,8 +25,8 @@ const WelcomeSection = () => {
         text2="Havilah Events Place"
         className="flex flex-col md:flex-row justify-center"
       />
-      <Line ClassName="justify-center"/>
-      <section className="flex flex-col lg:flex-row  gap-y-4 lg:gap-y-0 items-center mt-16">
+      <Line ClassName="justify-center" />
+      <section className="flex flex-col lg:flex-row  gap-y-4 lg:gap-y-0 items-center mt-16 4xl:items-stretch">
         <div className="w-full lg:w-1/2 h-full relative">
           <Image
             src={welcomeImage}
@@ -39,7 +38,7 @@ const WelcomeSection = () => {
           />
         </div>
 
-        <div className="content lg:w-1/2 px-8 py-10 bg-white border shadow-lg rounded-lg lg:rounded-tr-lg lg:rounded-br-lg lg:rounded-none lg:ml-[-20px] z-40">
+        <div className="content lg:w-1/2 px-8 py-10  bg-white border  z-40 shadow-lg rounded-lg lg:rounded-tr-lg lg:rounded-br-lg lg:rounded-none lg:ml-[-20px] 4xl:ml-[-40px] 4xl:flex-1 4xl:my-10 4xl:flex 4xl:flex-col 4xl:justify-center">
           <SectionTitle text="About Us" />
           <SectionSubTitle text="The Most Preferred Location" />
           <SectionContent
