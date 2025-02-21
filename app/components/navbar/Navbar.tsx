@@ -8,7 +8,7 @@ import navLinks from "./navLinks";
 import LogoSection from "./LogoSection";
 import DesktopNavLinks from "./DesktopNavLinks";
 import MobileMenu from "./MobileMenu";
-import '@mantine/core/styles.css';
+import "@mantine/core/styles.css";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -36,6 +36,14 @@ const Navbar = () => {
 
           {/* Mobile Menu */}
           <div className="flex items-center gap-3 lg:hidden">
+            <a
+              href="https://wa.me/2348033734820"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="uppercase bg-havilah-deep-cove text-white rounded-md text-[14px] py-1 px-2"
+            >
+              book now
+            </a>
             <Burger
               opened={opened}
               onClick={toggle}
@@ -49,11 +57,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Dropdown */}
-        <MobileMenu
-          opened={opened}
-          toggle={toggle}
-          navLinks={navLinks}
-        />
+        <MobileMenu opened={opened} toggle={toggle} navLinks={navLinks} />
       </div>
     </nav>
   );

@@ -29,7 +29,14 @@ const DesktopNavLinks: React.FC<DesktopNavLinksProps> = ({ navLinks }) => {
           </Link>
         );
       })}
-      <button className="uppercase bg-havilah-deep-cove text-white rounded-md text-[15px] py-1 px-2">book now</button>
+      <a
+        href="https://wa.me/2348033734820"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="uppercase bg-havilah-deep-cove text-white rounded-md text-[15px] py-1 px-2"
+      >
+        book now
+      </a>
       {/* <ThemeToggle /> */}
     </div>
   );

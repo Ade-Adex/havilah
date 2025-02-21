@@ -5,9 +5,16 @@ interface SectionButtonProps {
 }
 const SectionButton = ({ text }: SectionButtonProps) => {
   return (
-    <button className="mt-6 px-2 py-2 bg-havilah-whiskey text-white rounded-sm font-[600] font-robotoSlab text-[12px] lg:text-[16px] md:leading-[21.1px]">
-      {text}
-    </button>
+    <div className="mt-6">
+      <a
+        href="https://wa.me/2348033734820"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-2 py-2 bg-havilah-whiskey text-white rounded-sm font-[600] font-robotoSlab text-[12px] lg:text-[16px] md:leading-[21.1px]"
+      >
+        {text}
+      </a>
+    </div>
   );
 };
 
