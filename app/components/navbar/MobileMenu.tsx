@@ -23,7 +23,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
         opened ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
       }`}
     >
-      <div className="flex justify-between items-center md:h-28 mb-6 px-6 py-3 border-b border-gray-600 dark:border-gray-600">
+      <div className="flex justify-between items-center md:h-28 mb-6 px-4 md:px-12 h-20 border-b border-gray-600 dark:border-gray-600">
         <LogoSection />
         <Burger
           opened={opened}
