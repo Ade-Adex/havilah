@@ -15,7 +15,7 @@ const PagesHero: React.FC<PagesHeroProps> = ({ bgImage, pageTitle }) => {
       {/* Render the image */}
       <Image
         src={bgImage}
-        alt="About Hero"
+        alt={`${pageTitle} header image`}
         style={{ objectFit: "fill", objectPosition: "center" }}
         priority
         className="z-[-1] w-full h-full" // Optional: If you need other elements to overlay

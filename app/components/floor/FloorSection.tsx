@@ -12,7 +12,7 @@ const FloorSection = () => {
       <div className="relative w-full h-full pt-8 lg:pt-24">
         {" "}
         {/* Aspect Ratio Container */}
-        <Image src={floorImage} alt="stage" className="object-cover w-full" priority />
+        <Image src={floorImage} alt="floor image" className="object-cover w-full" priority />
       </div>
     </div>
   );

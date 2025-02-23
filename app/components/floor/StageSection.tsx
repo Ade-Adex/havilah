@@ -12,7 +12,7 @@ const StageSection = () => {
       <div className="relative w-full h-0 pb-[8%] lg:pb-[26.25%] pt-8 lg:pt-24"> {/* Aspect Ratio Container */}
         <Image
           src={stageImage}
-          alt="stage"
+          alt="stage image"
           className="object-cover object-center w-full"
           priority
         />
