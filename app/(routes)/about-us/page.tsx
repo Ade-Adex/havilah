@@ -9,6 +9,8 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import aboutHeroImage from "@/public/images/aboutHero.png";
 import PagesHero from "@/app/components/PagesHero";
+import aboutBg1 from "@/public/images/aboutBg1.png";
+import aboutBg2 from "@/public/images/aboutBg2.png";
 
 const AboutUsPage = () => {
   const pathname = usePathname();
@@ -16,10 +18,19 @@ const AboutUsPage = () => {
   return (
     <main className="">
       <PagesHero bgImage={aboutHeroImage} pageTitle={formattedPathname} />
-      <IntroductionSection />
-      <EventSpaceAndLocationSection />
+      {/* Background Image Wrapper */}
+      <div 
+        className="bg-fill bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${aboutBg2.src})` }}
+      >
+        <IntroductionSection />
+        <EventSpaceAndLocationSection />
       <VisionMissionSection />
+      </div>
+      <div className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${aboutBg1.src})` }}>
       <CeoMessageSection />
+
+      </div>
       <FooterSection />
     </main>
   );
