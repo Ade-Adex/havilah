@@ -20,6 +20,16 @@ const TileLayer = dynamic(() => import("react-leaflet").then((mod) => mod.TileLa
 const Marker = dynamic(() => import("react-leaflet").then((mod) => mod.Marker), { ssr: false });
 const Popup = dynamic(() => import("react-leaflet").then((mod) => mod.Popup), { ssr: false });
 
+
+interface FormValues {
+  firstName: string;
+  lastName: string;
+  phone: string;
+  email: string;
+  message: string;
+  subject?: string;
+}
+
 const ContactUaPage = () => {
   return (
     <SnackbarProvider maxSnack={1} autoHideDuration={5000} anchorOrigin={{ vertical: "top", horizontal: "center" }}>
@@ -52,7 +62,7 @@ function MyApp() {
     message: Yup.string().min(1, "Message must be at least 1 characters").required("Message is required"),
   });
 
-  const handleSubmit = async (values: any, { resetForm }: any) => {
+  const handleSubmit = async (values: FormValues, { resetForm }: { resetForm: () => void }) => {
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
     const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
