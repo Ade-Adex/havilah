@@ -12,7 +12,8 @@ import "leaflet/dist/leaflet.css";
 import emailjs from "@emailjs/browser";
 import { SnackbarProvider, useSnackbar } from "notistack";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
+import validationSchema from "@/app/schema/validationSchema";
+import { FormValuesProps } from "@/app/types/formTypes";
 
 // Dynamically import React-Leaflet components to prevent SSR issues
 const MapContainer = dynamic(() => import("react-leaflet").then((mod) => mod.MapContainer), { ssr: false });
@@ -21,14 +22,6 @@ const Marker = dynamic(() => import("react-leaflet").then((mod) => mod.Marker), 
 const Popup = dynamic(() => import("react-leaflet").then((mod) => mod.Popup), { ssr: false });
 
 
-interface FormValues {
-  firstName: string;
-  lastName: string;
-  phone: string;
-  email: string;
-  message: string;
-  subject?: string;
-}
 
 const ContactUaPage = () => {
   return (
@@ -49,20 +42,9 @@ function MyApp() {
   useEffect(() => {
     setIsClient(true);
   }, []);
+ 
 
-  // Validation Schema using Yup
-  const validationSchema = Yup.object({
-    firstName: Yup.string().required("First name is required"),
-    lastName: Yup.string().required("Last name is required"),
-    phone: Yup.string()
-      .matches(/^[0-9]+$/, "Only numbers are allowed")
-      .min(10, "Phone number must be at least 10 digits")
-      .required("Phone number is required"),
-    email: Yup.string().email("Invalid email format").required("Email is required"),
-    message: Yup.string().min(1, "Message must be at least 1 characters").required("Message is required"),
-  });
-
-  const handleSubmit = async (values: FormValues, { resetForm }: { resetForm: () => void }) => {
+  const handleSubmit = async (values: FormValuesProps, { resetForm }: { resetForm: () => void }) => {
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
     const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
