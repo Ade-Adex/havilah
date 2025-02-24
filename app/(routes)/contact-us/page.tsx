@@ -53,12 +53,12 @@ function MyApp() {
   });
 
   const handleSubmit = async (values: any, { resetForm }: any) => {
-    const serviceId = "service_uvirr8k";
-    const templateId = "template_cfz94vb";
-    const userId = "FnXx2Hj1zPaa0luQv";
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+    const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
 
     const templateParams = {
-      to_name: "Havilah Event Center",
+      to_name: process.env.NEXT_PUBLIC_COMPANY_NAME,
       from_name: values.firstName + " " + values.lastName, // Combining first and last name
       from_email: values.email,
       subject: values.subject || "New Contact Message", // Default subject if none is provided
