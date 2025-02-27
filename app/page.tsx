@@ -7,7 +7,7 @@ import { Metadata } from "next";
 import KitchenSection from "./components/home/KitchenSection";
 import EventSection from "./components/home/EventSection";
 import Services from "./components/home/Services";
-import { fetchEvents } from "@/sanity/services/fetchEvents";
+import { fetchEvents } from "@/sanity/services/upcomingEventServices";
 
 
 export const metadata: Metadata = SEO_METADATA.home;
