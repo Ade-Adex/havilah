@@ -11,5 +11,5 @@ export const fetchEvents = async (): Promise<Event[]> => {
     "imageUrl": image.asset->url
   }`;
 
-  return await client.fetch(query);
+  return await client.fetch(query, undefined, { next: { revalidate: 60 } });
 };
