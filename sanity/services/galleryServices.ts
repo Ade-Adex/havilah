@@ -3,7 +3,6 @@
 import { Gallery } from "@/app/types/gallery";
 import { client } from "../lib/client";
 
-// Fetch data from Sanity
 export const fetchGallery = async (): Promise<Gallery[]> => {
   const query = `*[_type == "gallerySchema"]{
     category,
@@ -16,6 +15,6 @@ export const fetchGallery = async (): Promise<Gallery[]> => {
       description
     }
   }`;
-
-  return await client.fetch(query);
+  // Here we add Next.js caching options (revalidate every 60 seconds)
+  return await client.fetch(query, undefined, { next: { revalidate: 60 } });
 };
