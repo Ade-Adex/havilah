@@ -7,17 +7,22 @@ import { Metadata } from "next";
 import KitchenSection from "./components/home/KitchenSection";
 import EventSection from "./components/home/EventSection";
 import Services from "./components/home/Services";
+import { fetchEvents } from "@/sanity/services/fetchEvents";
+
 
 export const metadata: Metadata = SEO_METADATA.home;
 
 export default function Home() {
+  // Fetch events using Next.js caching (ISR with revalidate set in fetchEvents)
+  const events = await fetchEvents();
+
   return (
     <main>
       <HeroHeader />
       <Services/>
       <WelcomeSection />
       <KitchenSection />
-      <EventSection />
+      <EventSection events={events} />
     </main>
   );
 }
