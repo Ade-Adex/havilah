@@ -1,6 +1,6 @@
 // /app/(routes)/gallery/page.tsx
 import GalleryPageClient from "./GalleryPageClient";
-import { fetchGallery } from "@/sanity/services/galleryService";
+import { fetchGallery } from "@/sanity/services/galleryServices";
 
 export default async function GalleryPage() {
   // Next.js will cache this fetch per the options in fetchGallery
