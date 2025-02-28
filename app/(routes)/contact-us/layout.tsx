@@ -5,7 +5,7 @@ import SEO_METADATA from "@/app/utils/metadataConfig";
 // Set metadata here for the leadership section
 export const metadata = SEO_METADATA.contactUs;
 
-export default function LeadershipLayout({
+export default function ContactLayout({
   children,
 }: {
   children: React.ReactNode;
