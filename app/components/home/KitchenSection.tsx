@@ -16,7 +16,9 @@ const KitchenSection = () => {
   const { ref, isInView } = useInView(0.2);
   return (
     <div
+      id="kitchen"
       ref={ref}
+      aria-label="Havilah Kitchen"
       className={`py-8 px-4 md:px-12 lg:px-16 xl:px-24 transform transition duration-700 ease-out ${
         isInView ? "opacity-100 scale-100" : "opacity-0 scale-95"
       }`}
@@ -43,7 +45,11 @@ const KitchenSection = () => {
             highlightedtext="Havilah Kitchen "
             text="is a premier on-site catering service dedicated to delivering exceptional culinary experiences for every occasion. Founded by our CEO , our business prides itself on crafting delicious, customized menus that cater to the unique tastes and needs of our clients. Whether it's a corporate event, wedding, or private party, we combine fresh, high-quality ingredients with professional service to ensure every event is a memorable success."
           />
-          <SectionButton text="BOOK US" />
+          <SectionButton
+            text="BOOK US"
+            href="https://wa.me/2348033734820"
+            external
+          />
         </div>
         <div className="w-full lg:w-1/2 lg:ml-[-20px] 4xl:ml-[-40px] ">
           <Image

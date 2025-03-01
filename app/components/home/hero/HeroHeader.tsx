@@ -51,7 +51,7 @@ const HeroHeader = () => {
     <header className="relative md:h-screen overflow-hidden">
       <Slider ref={sliderRef} {...sliderSettings}>
         {heroSlides.map((slide, index) => (
-          <HeroSlide key={index} image={slide.image} description={slide.description} index={index} />
+          <HeroSlide key={index} slide={slide.image} description={slide.description} index={index} />
         ))}
       </Slider>
 

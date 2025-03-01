@@ -16,6 +16,7 @@ const WelcomeSection = () => {
   return (
     <div
       ref={ref}
+      aria-label="Welcome Section"
       className={`py-8 px-4 md:px-12 lg:px-16 xl:px-24 transform transition duration-700 ease-out ${
         isInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
       }`}
@@ -33,8 +34,8 @@ const WelcomeSection = () => {
             alt="Welcome to Havilah Events Place"
             className="md:w-full h-full rounded-lg shadow-lg "
             priority
-            // fill
-            // sizes="(max-width: 1024px) 100vw, 50vw"
+            width={800}  
+            height={600}
           />
         </div>
 
@@ -45,7 +46,7 @@ const WelcomeSection = () => {
             highlightedtext="Havilah Events Place "
             text="is a premier venue designed to host a wide range of events, from elegant weddings and corporate meetings to vibrant parties and cultural gatherings. With state-of-the-art facilities, flexible spaces, and a team of experienced professionals, we ensure every event is a memorable success. Conveniently located and equipped with modern & premium amenities, Havilah Events Place offers a perfect blend of style, comfort, and functionality, making it the ideal destination for any occasion. The unforgettable moments come to life in style and sophistication in our ultra-modern facility."
           />
-          <SectionButton text="MORE ABOUT US" />
+          <SectionButton text="MORE ABOUT US" href="/about-us"/>
         </div>
       </section>
     </div>

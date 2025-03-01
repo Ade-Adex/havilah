@@ -11,8 +11,6 @@ const CeoMessageSection = () => (
       src={client}
       alt="Havilah CEO"
       priority
-      // fill
-      // sizes="(max-width: 1024px) 100vw, 50vw"
       className="lg:w-full "
     />
   </div>

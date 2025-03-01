@@ -13,19 +13,13 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
   const { title, type, date, description, status, imageUrl } = event;
   const { ref, isInView } = useInView(0.2);
 
-  // const statusClasses = {
-  //   Pending: "text-yellow-500",
-  //   Completed: "text-green-500",
-  //   Ongoing: "text-blue-500",
-  //   Upcoming: "text-purple-500",
-  // };
-
   return (
     <div
       ref={ref}
       className={`bg-white shadow-lg rounded-md overflow-hidden flex flex-col transform transition duration-700 ease-out group ${
         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
+      aria-labelledby={`event-${title}`}
     >
       {/* Image */}
       <div className="relative h-[200px] md:h-[292px] w-full overflow-hidden">
@@ -34,7 +28,6 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
           alt={title}
           fill
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-          // priority
           loading="lazy"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
@@ -44,6 +37,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
       <div className="p-[15px] flex flex-col flex-1">
         {/* Title */}
         <h2
+          id={`event-${title}`}
           className="text-[14px] md:text-lg font-semibold text-havilah-deep-cove font-robotoSlab line-clamp-2 min-h-[24px] md:min-h-[48px]"
           title={title}
         >

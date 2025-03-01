@@ -6,6 +6,7 @@ import Line from "../Line";
 import Rectangle from "@/public/images/Rectangle.png";
 import Image from "next/image";
 import { Event } from "@/app/types/event/event";
+import EventSkeleton from "./EventSkeleton";
 
 // Lazy load the EventCard component
 const LazyEventCard = lazy(() => import("./EventCard"));
@@ -40,9 +41,7 @@ const EventSection = ({ events }: EventSectionProps) => {
             <Suspense
               key={index}
               fallback={
-                <div className="text-center text-gray-500">
-                  Loading event card...
-                </div>
+                <EventSkeleton/>
               }
             >
               <LazyEventCard event={event} />

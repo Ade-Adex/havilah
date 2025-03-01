@@ -1,5 +1,5 @@
 // /app/(routes)/gallery/page.tsx
-import GalleryPageClient from "./GalleryPageClient";
+import GalleryPageClient from "../../components/gallery/GalleryPageClient";
 import { fetchGallery } from "@/sanity/services/galleryServices";
 
 export default async function GalleryPage() {

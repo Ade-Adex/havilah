@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import { StaticImageData } from "next/image";
 
 interface HeroSlideProps {
-  image: StaticImageData;
+  slide: StaticImageData;
   description: string;
   index: number;
 }
 
-const HeroSlide = ({ image, description, index }: HeroSlideProps) => {
+const HeroSlide = ({ slide, description, index }: HeroSlideProps) => {
   return (
     <motion.div
       key={index}
@@ -21,7 +21,7 @@ const HeroSlide = ({ image, description, index }: HeroSlideProps) => {
       className="w-full h-full overflow-hidden relative"
     >
       <Image
-        src={image}
+        src={slide}
         alt={`hero ${index}`}
         className="w-full h-[50vh] md:h-screen object-cover"
         priority
