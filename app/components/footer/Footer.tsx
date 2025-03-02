@@ -159,7 +159,8 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className=" pt-12 pb-8 flex items-center justify-center border-t border-gray-700">
           <p className="text-[10px] md:text-[12px] font-[300] font-robotoSlab text-gray-400">
-            © 2024, Havilah Events Place. All Rights Reserved
+            © {new Date().getFullYear()}, Havilah Events Place. All Rights
+            Reserved.
           </p>
         </div>
       </div>
