@@ -1,8 +1,5 @@
-"use client";
-
 import React from "react";
 import Image, { StaticImageData } from "next/image";
-
 
 interface PagesHeroProps {
   bgImage: StaticImageData;
@@ -12,16 +9,18 @@ interface PagesHeroProps {
 const PagesHero: React.FC<PagesHeroProps> = ({ bgImage, pageTitle }) => {
   return (
     <div className="relative w-full h-[160px] md:h-[180px] lg:h-[unset] lg:max-h-[296px]">
-      {/* Render the image */}
+      {/* Background image */}
       <Image
         src={bgImage}
         alt={`${pageTitle} header image`}
         style={{ objectFit: "fill", objectPosition: "center" }}
         priority
-        className="z-[-1] w-full h-full" // Optional: If you need other elements to overlay
+        placeholder="blur"
+        className="z-[-1] w-full h-full"
+        sizes="100vw" // Adjust sizes as needed
       />
-      {/* Text overlay or additional content */}
-      <div className="absolute top-[50%] lg:top-[50%] left-[10%] flex flex-col gap-3 md:gap-5 text-white text-[14px] md:text-[18px] font-[500] font-robotoSlab">
+      {/* Overlay text */}
+      <div className="absolute top-1/2 left-[10%] transform -translate-y-1/2 flex flex-col gap-3 md:gap-5 text-white text-[14px] md:text-[18px] font-[500] font-robotoSlab">
         <h1 className="text-2xl md:text-3xl xl:text-5xl font-bold font-robotoSlab capitalize">
           {pageTitle}
         </h1>
