@@ -22,7 +22,7 @@ const MediaModal = ({ media, closeModal }: MediaModalProps) => {
       {/* Clickable Background (for closing modal) */}
       <div className="absolute inset-0" onClick={closeModal}></div>
 
-      <div className="relative bg-white rounded-lg overflow-hidden max-w-[90%] md:max-w-2xl lg:max-w-4xl max-h-[85vh] w-full p-4 shadow-lg">
+      <div className="relative bg-white rounded-lg overflow-hidden max-w-[95%] md:max-w-2xl lg:max-w-4xl max-h-[85vh] w-full p-2 shadow-lg">
         {/* Close Button */}
         <button
           onClick={closeModal}
