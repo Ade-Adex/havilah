@@ -13,10 +13,12 @@ import useInView from "@/app/hooks/useInView";
 
 const WelcomeSection = () => {
   const { ref, isInView } = useInView(0.2);
+
   return (
     <div
       ref={ref}
       aria-label="Welcome Section"
+      style={{ willChange: "opacity, transform" }}
       className={`py-8 px-4 md:px-12 lg:px-16 xl:px-24 transform transition duration-700 ease-out ${
         isInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
       }`}
@@ -27,26 +29,28 @@ const WelcomeSection = () => {
         className="flex flex-col md:flex-row justify-center"
       />
       <Line ClassName="justify-center" />
-      <section className="flex flex-col lg:flex-row  gap-y-4 lg:gap-y-0 items-center mt-16 4xl:items-stretch">
+      <section className="flex flex-col lg:flex-row gap-y-4 lg:gap-y-0 items-center mt-16 4xl:items-stretch">
         <div className="w-full lg:w-1/2 h-full relative">
           <Image
             src={welcomeImage}
             alt="Welcome to Havilah Events Place"
-            className="md:w-full h-full rounded-lg shadow-lg "
+            className="md:w-full h-full rounded-lg shadow-lg"
             priority
-            width={800}  
+            placeholder="blur"
+            width={800}
             height={600}
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
 
-        <div className="content lg:w-1/2 px-8 py-10  bg-white border  z-40 shadow-lg rounded-lg lg:rounded-tr-lg lg:rounded-br-lg lg:rounded-none lg:ml-[-20px] 4xl:ml-[-40px] 4xl:flex-1 4xl:my-10 4xl:flex 4xl:flex-col 4xl:justify-center">
+        <div className="content lg:w-1/2 px-8 py-10 bg-white border z-40 shadow-lg rounded-lg lg:rounded-tr-lg lg:rounded-br-lg lg:rounded-none lg:ml-[-20px] 4xl:ml-[-40px] 4xl:flex-1 4xl:my-10 4xl:flex 4xl:flex-col 4xl:justify-center">
           <SectionTitle text="About Us" />
           <SectionSubTitle text="The Most Preferred Location" />
           <SectionContent
             highlightedtext="Havilah Events Place "
             text="is a premier venue designed to host a wide range of events, from elegant weddings and corporate meetings to vibrant parties and cultural gatherings. With state-of-the-art facilities, flexible spaces, and a team of experienced professionals, we ensure every event is a memorable success. Conveniently located and equipped with modern & premium amenities, Havilah Events Place offers a perfect blend of style, comfort, and functionality, making it the ideal destination for any occasion. The unforgettable moments come to life in style and sophistication in our ultra-modern facility."
           />
-          <SectionButton text="MORE ABOUT US" href="/about-us"/>
+          <SectionButton text="MORE ABOUT US" href="/about-us" />
         </div>
       </section>
     </div>
