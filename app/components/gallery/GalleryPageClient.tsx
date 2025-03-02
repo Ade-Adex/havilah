@@ -24,7 +24,18 @@ const GalleryPageClient = ({ galleryImages }: GalleryPageClientProps) => {
   const [selectedCategory, setSelectedCategory] = useState("events");
   const [selectedMedia, setSelectedMedia] = useState<MediaProps | null>(null);
 
-  const openModal = (media: MediaProps) => setSelectedMedia(media);
+  // const openModal = (media: MediaProps) => setSelectedMedia(media);
+
+  const preloadMedia = (src: string) => {
+  const img = new Image();
+  img.src = src;
+};
+
+const openModal = (media: MediaProps) => {
+  preloadMedia(media.src);
+  setSelectedMedia(media);
+};
+
 
   // Define order for categories
   const categoryOrder = ["events", "hall", "videos"];
