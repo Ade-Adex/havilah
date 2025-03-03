@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import modern from "@/public/images/Modern.png";
 import floor from "@/public/images/floor.png";
-import parking from "@/public/images/parking lot.png"; // Consider renaming this file to "parking-lot.png"
+import parking from "@/public/images/parking-lot.png";
 
 const Services = () => {
   return (

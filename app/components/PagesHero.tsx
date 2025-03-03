@@ -13,11 +13,11 @@ const PagesHero: React.FC<PagesHeroProps> = ({ bgImage, pageTitle }) => {
       <Image
         src={bgImage}
         alt={`${pageTitle} header image`}
-        style={{ objectFit: "fill", objectPosition: "center" }}
-        priority
+        style={{ objectFit: "cover", objectPosition: "center" }}
+        // priority
         placeholder="blur"
-        className="z-[-1] w-full h-full"
-        sizes="100vw" // Adjust sizes as needed
+        sizes="100vw"
+        className="z-[-1]"
       />
       {/* Overlay text */}
       <div className="absolute top-1/2 left-[10%] transform -translate-y-1/2 flex flex-col gap-3 md:gap-5 text-white text-[14px] md:text-[18px] font-[500] font-robotoSlab">

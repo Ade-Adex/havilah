@@ -13,7 +13,6 @@ import { fetchEvents } from "@/sanity/services/upcomingEventServices";
 export const metadata: Metadata = SEO_METADATA.home;
 
 export default async function Home() {
-  // Fetch events using Next.js caching (ISR with revalidate set in fetchEvents)
   const events = await fetchEvents();
 
   return (

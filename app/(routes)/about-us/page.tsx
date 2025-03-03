@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import CeoMessageSection from "@/app/components/about-us/CeoMessageSection";
 import EventSpaceAndLocationSection from "@/app/components/about-us/EventSpaceAndLocationSection";
 import FooterSection from "@/app/components/about-us/FooterSection";
@@ -15,24 +16,33 @@ import aboutBg2 from "@/public/images/aboutBg2.png";
 const AboutUsPage = () => {
   const pathname = usePathname();
   const formattedPathname = pathname.replace("/", "");
-  return (
-    <main className="">
-      <PagesHero bgImage={aboutHeroImage} pageTitle={formattedPathname} />
-      {/* Background Image Wrapper */}
-      <div 
-        className="bg-fill bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${aboutBg2.src})` }}
-      >
-        <IntroductionSection />
-        <EventSpaceAndLocationSection />
-      <VisionMissionSection />
-      </div>
-      <div className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${aboutBg1.src})` }}>
-      <CeoMessageSection />
 
-      </div>
-      <FooterSection />
-    </main>
+  return (
+    <>
+      {/* Preload the critical LCP background image */}
+      <Head>
+        <link rel="preload" as="image" href={aboutBg2.src} />
+      </Head>
+      <main>
+        <PagesHero bgImage={aboutHeroImage} pageTitle={formattedPathname} />
+        {/* Background Image Wrapper with preloaded LCP element */}
+        <div
+          className="bg-fill bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${aboutBg2.src})` }}
+        >
+          <IntroductionSection />
+          <EventSpaceAndLocationSection />
+          <VisionMissionSection />
+        </div>
+        <div
+          className="bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${aboutBg1.src})` }}
+        >
+          <CeoMessageSection />
+        </div>
+        <FooterSection />
+      </main>
+    </>
   );
 };
 
