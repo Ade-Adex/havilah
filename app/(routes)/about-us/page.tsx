@@ -13,10 +13,11 @@ import aboutBg1 from "@/public/images/aboutBg1.png";
 import aboutBg2 from "@/public/images/aboutBg2.png";
 import { useScrollToSection } from "@/app/hooks/useScrollToSection";
 import { usePathname } from "next/navigation";
+import Loader from "@/app/components/Loader";
 
 const AboutUsPage = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div className="flex justify-center items-center w-full"><Loader/></div>}>
       <AboutUsContent />
     </Suspense>
   );

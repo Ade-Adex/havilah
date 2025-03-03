@@ -9,6 +9,8 @@ import EventSection from "./components/home/EventSection";
 import Services from "./components/home/Services";
 import { fetchEvents } from "@/sanity/services/upcomingEventServices";
 import { Suspense } from "react";
+import EventSkeleton from "./components/home/EventSkeleton";
+import Loader from "./components/Loader";
 
 
 export const metadata: Metadata = SEO_METADATA.home;
@@ -21,15 +23,12 @@ export default async function Home() {
       <HeroHeader />
       <Services/>
       <WelcomeSection />
-      {/* <KitchenSection />
-      <EventSection events={events} /> */}
-      {/* Wrap KitchenSection in Suspense */}
-      <Suspense fallback={<div>Loading Kitchen...</div>}>
+      <Suspense fallback={<div className="flex justify-center items-center w-full "><Loader/></div>}>
         <KitchenSection />
       </Suspense>
 
       {/* Wrap EventSection in Suspense */}
-      <Suspense fallback={<div>Loading Events...</div>}>
+      <Suspense fallback={<EventSkeleton/>}>
         <EventSection events={events} />
       </Suspense>
     </main>
