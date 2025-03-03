@@ -24,7 +24,8 @@ const HeroSlide = ({ slide, description, index }: HeroSlideProps) => {
         src={slide}
         alt={`hero ${index}`}
         className="w-full h-[50vh] md:h-screen object-cover"
-        priority
+        // priority={index === 0}
+        // fetchPriority="high"
         height={500}
         sizes="(max-width: 768px) 50vw, 100vw"
         placeholder="blur"

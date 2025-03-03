@@ -9,9 +9,10 @@ import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import "animate.css";
 import validationSchema from "@/app/schema/validationSchema";
+import { OptionsObject } from "notistack";
 
 interface ContactFormProps {
-  enqueueSnackbar: (message: string, options: any) => void;
+  enqueueSnackbar: (message: string, options?: OptionsObject) => void;
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ enqueueSnackbar }) => {

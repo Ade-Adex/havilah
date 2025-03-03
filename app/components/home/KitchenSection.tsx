@@ -11,9 +11,11 @@ import SectionContent from "./SectionContent";
 import SectionButton from "./SectionButton";
 import useInView from "@/app/hooks/useInView";
 import triangle from "@/public/images/triangle.png";
+import { useScrollToSection } from "@/app/hooks/useScrollToSection";
 
 const KitchenSection = () => {
   const { ref, isInView } = useInView(0.2);
+  useScrollToSection()
 
   return (
     <div
@@ -21,7 +23,7 @@ const KitchenSection = () => {
       ref={ref}
       aria-label="Havilah Kitchen"
       style={{ willChange: "opacity, transform" }}
-      className={`py-8 px-4 md:px-12 lg:px-16 xl:px-24 transform transition duration-700 ease-out ${
+      className={`py-8 px-4 md:px-12 lg:px-16 xl:px-24 transform transition duration-700 ease-out scroll-mt-[100px] ${
         isInView ? "opacity-100 scale-100" : "opacity-0 scale-95"
       }`}
     >

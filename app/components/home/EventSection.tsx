@@ -7,6 +7,7 @@ import Rectangle from "@/public/images/Rectangle.png";
 import Image from "next/image";
 import { Event } from "@/app/types/event/event";
 import EventSkeleton from "./EventSkeleton";
+import { useScrollToSection } from "@/app/hooks/useScrollToSection";
 
 // Lazy load the EventCard component
 const LazyEventCard = lazy(() => import("./EventCard"));
@@ -18,6 +19,7 @@ type EventSectionProps = {
 const EventSection = ({ events }: EventSectionProps) => {
   const [showAll, setShowAll] = useState(false);
   const handleViewAll = () => setShowAll((prev) => !prev);
+  useScrollToSection()
 
   return (
     <div
@@ -30,7 +32,6 @@ const EventSection = ({ events }: EventSectionProps) => {
         src={Rectangle}
         alt="Overlay"
         className="absolute top-8 md:top-8 left-0 md:left-24 z-0"
-        priority
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] mt-16">

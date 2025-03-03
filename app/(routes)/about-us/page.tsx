@@ -6,16 +6,19 @@ import EventSpaceAndLocationSection from "@/app/components/about-us/EventSpaceAn
 import FooterSection from "@/app/components/about-us/FooterSection";
 import IntroductionSection from "@/app/components/about-us/IntroductionSection";
 import VisionMissionSection from "@/app/components/about-us/VisionMissionSection";
-import { usePathname } from "next/navigation";
 import React from "react";
 import aboutHeroImage from "@/public/images/aboutHero.png";
 import PagesHero from "@/app/components/PagesHero";
 import aboutBg1 from "@/public/images/aboutBg1.png";
 import aboutBg2 from "@/public/images/aboutBg2.png";
+import { useScrollToSection } from "@/app/hooks/useScrollToSection";
+import { usePathname } from "next/navigation";
 
 const AboutUsPage = () => {
   const pathname = usePathname();
   const formattedPathname = pathname.replace("/", "");
+
+  useScrollToSection();
 
   return (
     <>
