@@ -6,7 +6,7 @@ import EventSpaceAndLocationSection from "@/app/components/about-us/EventSpaceAn
 import FooterSection from "@/app/components/about-us/FooterSection";
 import IntroductionSection from "@/app/components/about-us/IntroductionSection";
 import VisionMissionSection from "@/app/components/about-us/VisionMissionSection";
-import React from "react";
+import React, { Suspense } from "react";
 import aboutHeroImage from "@/public/images/aboutHero.png";
 import PagesHero from "@/app/components/PagesHero";
 import aboutBg1 from "@/public/images/aboutBg1.png";
@@ -15,6 +15,16 @@ import { useScrollToSection } from "@/app/hooks/useScrollToSection";
 import { usePathname } from "next/navigation";
 
 const AboutUsPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AboutUsContent />
+    </Suspense>
+  );
+  
+};
+
+function AboutUsContent() {
+  
   const pathname = usePathname();
   const formattedPathname = pathname.replace("/", "");
 
@@ -47,6 +57,6 @@ const AboutUsPage = () => {
       </main>
     </>
   );
-};
+}
 
 export default AboutUsPage;
