@@ -8,7 +8,7 @@ import logo from "@/public/images/Havila_Logo.png";
 const Newsletter: React.FC = () => {
   return (
     <div className="mb-10 lg:mb-0 lg:w-1/3 flex flex-col items-center">
-      <Image src={logo} alt="Logo" className="h-20 w-20 mb-6" />
+      <Image src={logo} alt="Logo" className="h-14 w-14 md:h-20 md:w-20 mb-6" />
       <div className="rounded-lg bg-havilah-footer pt-5 pb-16 px-4 relative hidden md:flex flex-col">
         {/* Newsletter background image */}
         <div className="hidden md:block absolute top-0 left-0 md:w-[56%] h-full z-0">
