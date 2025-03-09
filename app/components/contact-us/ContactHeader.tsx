@@ -24,8 +24,8 @@ const ContactHeader: React.FC = () => {
         </p>
         <p>
           Email:{" "}
-          <a href="mailto:hismercy03@gmail.com" className="hover:underline">
-            hismercy03@gmail.com
+          <a href="mailto:admin@havilaheventsplace.com" className="hover:underline">
+            admin@havilaheventsplace.com
           </a>
         </p>
       </div>
