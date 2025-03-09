@@ -10,6 +10,25 @@ const baseMetadata: Metadata = {
     "Host your weddings, corporate events, and special occasions at Havilah Event Place, the premier event venue in Ogbomoso, Oyo state, Nigeria. Book today!",
   keywords:
     "event venue, wedding hall, conference center, banquet hall, event space, Ogbomoso event venue, Nigerian event venue, party hall, corporate event space, special events, event booking, venue rental",
+  icons: {
+    icon: "/favicon.ico", // Default favicon
+    shortcut: "/favicon.ico", // Shortcut icon
+    apple: "https://havilaheventsplace.com/apple-touch-icon.png", // Apple Touch Icon
+    other: [
+      {
+        rel: "icon",
+        url: "https://havilaheventsplace.com/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        rel: "icon",
+        url: "https://havilaheventsplace.com/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+  },
   openGraph: {
     siteName: "Havilah Event Place",
     locale: "en_US",
@@ -36,6 +55,7 @@ const baseMetadata: Metadata = {
     images: ["https://havilaheventsplace.com/twitter-image.jpg"],
   },
 };
+
 
 const SEO_METADATA: Record<string, Metadata> = {
   home: {
