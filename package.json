@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build && tsc -p tsconfig.server.json",
     "start": "cross-env NODE_ENV=production node build/server.js",
     "lint": "next lint",

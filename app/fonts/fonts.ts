@@ -1,15 +1,33 @@
-// app/fonts/fonts.ts
+// // app/fonts/fonts.ts
 
-import { Roboto_Slab, Montserrat } from "next/font/google";
+// import { Roboto_Slab, Montserrat } from "next/font/google";
+
+// export const robotoSlab = Roboto_Slab({
+//   subsets: ["latin"],
+//   weight: ["400", "700"], // Add weights as needed
+//   variable: "--font-roboto-slab",
+// });
+
+// export const montserrat = Montserrat({
+//   subsets: ["latin"],
+//   weight: ["400", "600", "700"], // Add weights as needed
+//   variable: "--font-montserrat",
+// });
+
+
+
+import { Roboto_Slab, Montserrat } from 'next/font/google'
 
 export const robotoSlab = Roboto_Slab({
-  subsets: ["latin"],
-  weight: ["400", "700"], // Add weights as needed
-  variable: "--font-roboto-slab",
-});
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap', // important for Turbopack
+  variable: '--font-roboto-slab',
+})
 
 export const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"], // Add weights as needed
-  variable: "--font-montserrat",
-});
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  display: 'swap', // important for Turbopack
+  variable: '--font-montserrat',
+})
