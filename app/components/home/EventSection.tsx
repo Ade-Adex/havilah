@@ -38,9 +38,9 @@ const EventSection = ({ events }: EventSectionProps) => {
         {(showAll ? events : events.slice(0, 6))
           .slice() // clone array
           .reverse()
-          .map((event, index) => (
+          .map((event) => (
             <Suspense
-              key={index}
+              key={event._id}
               fallback={
                 <EventSkeleton/>
               }

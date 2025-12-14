@@ -8,6 +8,7 @@ import useInView from "@/app/hooks/useInView";
 import { Event } from "@/app/types/event/event";
 import OngoingIcon from "./OngoingIcon";
 import UpcomingIcon from "./UpcomingIcon";
+import EventDate from "@/app/components/home/EventDate";
 
 const EventCard: React.FC<{ event: Event }> = ({ event }) => {
   const { title, type, date, description, status, imageUrl } = event;
@@ -17,7 +18,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
     <div
       ref={ref}
       className={`bg-white shadow-lg rounded-md overflow-hidden flex flex-col transform transition duration-700 ease-out group ${
-        isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
       aria-labelledby={`event-${title}`}
     >
@@ -64,7 +65,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
                 d="M8 7V3m8 4V3m-6 4h6m-6 0H5a2 2 0 00-2 2v11a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-6 0H5m6 0v11"
               />
             </svg>
-            {new Date(date).toLocaleString("en-US", {
+            {/* {new Date(date).toLocaleString("en-US", {
               weekday: "short", // e.g., "Thu"
               month: "short", // e.g., "Jul"
               day: "2-digit", // e.g., "25"
@@ -72,7 +73,8 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
               hour: "2-digit", // e.g., "03"
               minute: "2-digit", // e.g., "30"
               hour12: true, // 12-hour format with AM/PM
-            })}
+            })} */}
+            <EventDate date={date} />
           </div>
         </div>
 
@@ -84,16 +86,16 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
           <span
             className={`text-[10px] md:text-[12px] font-semibold flex items-center text-havilah-deep-cove`}
           >
-            {status === "Pending" && (
+            {status === 'Pending' && (
               <Image src={pending} alt="Pending" className="h-5 w-5 mr-2" />
             )}
-            {status === "Completed" && (
+            {status === 'Completed' && (
               <Image src={completed} alt="Completed" className="h-5 w-5 mr-2" />
             )}
-            {status === "Ongoing" && (
+            {status === 'Ongoing' && (
               <OngoingIcon className="h-5 w-5 mr-2 text-havilah-deep-cove" />
             )}
-            {status === "Upcoming" && (
+            {status === 'Upcoming' && (
               <UpcomingIcon className="h-5 w-5 mr-2 text-havilah-deep-cove" />
             )}
             <span className="ml-2 capitalize">{status}</span>
@@ -101,7 +103,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
         </div>
       </div>
     </div>
-  );
+  )
 };
 
 export default EventCard;
